@@ -1,0 +1,1 @@
+enum Genres {fantasy, drama ,romance,thriller, horror, adventure, poetry}
