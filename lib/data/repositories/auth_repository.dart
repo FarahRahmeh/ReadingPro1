@@ -103,6 +103,36 @@ class AuthRepository extends GetxController {
 
     return response;
   }
+
+  ///! [EmailAuthentication] - Code Confirmation
+  Future<http.Response> codeConfirmation(String email, String code) async {
+    final body = jsonEncode({'email': email, 'code': code});
+    final response = await http.post(
+      Uri.parse('$baseUrl/checkVerify'),
+      body: body,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    );
+
+    return response;
+  }
+
+  ///! [EmailAuthentication] - Email verify
+  Future<http.Response> verifyEmail(String email) async {
+    final body = jsonEncode({'email': email});
+    final response = await http.post(
+      Uri.parse('$baseUrl/verifyCode'),
+      body: body,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    );
+
+    return response;
+  }
 // Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
 //     try {
 //         return await _auth.createUserWithEmailAndPassword(email: email, password: password);
