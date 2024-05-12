@@ -1,4 +1,5 @@
 import 'package:booktaste/auth/login/login_controller.dart';
+import 'package:booktaste/auth/verify_email/verify_email_page.dart';
 import 'package:booktaste/data/services/role.manager.dart';
 import 'package:booktaste/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
@@ -103,7 +104,7 @@ class LoginForm extends StatelessWidget {
             width: double.infinity,
             child: OutlinedButton(
               onPressed: () => Get.to(
-                () => const RegisterPage(),
+                () => const VerifyEmailPage(),
               ),
               child: const Text('Register'),
             ),

@@ -7,6 +7,7 @@ import 'package:booktaste/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:logger/logger.dart';
 
 Future<void> main() async {
   ///Widgets Binding
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
-      home: const RegisterPage(),
+      home: const LoginPage(),
     );
   }
 }

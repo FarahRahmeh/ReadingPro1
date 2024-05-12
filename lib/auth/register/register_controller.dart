@@ -47,7 +47,7 @@ class RegisterController extends GetxController {
 
       final userData = json.decode(response.body); // to string
       if (response.statusCode == 200) {
-        Get.offAll(LoginPage());
+        Get.offAll(() => const LoginPage());
       } else if (response.statusCode == 401)
 
       //!Wrong Password

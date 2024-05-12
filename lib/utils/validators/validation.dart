@@ -90,4 +90,15 @@ class Validator {
     }
     return null;
   }
+
+  static String? validateCode(String? code) {
+    if (code == null || code.isEmpty) {
+      return 'Please enter the confirmation code';
+    }
+    if (code.length < 5) {
+      return 'confirmation code should be 5 digits';
+    }
+    // You can add more validation if needed
+    return null;
+  }
 }
