@@ -1,19 +1,24 @@
+import 'package:booktaste/utils/constans/colors.dart';
 import 'package:flutter/material.dart';
 
 class MyBottomSheetTheme {
   MyBottomSheetTheme._();
+
+  //! Light
   static BottomSheetThemeData lightBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
-    backgroundColor: Colors.white,
-    modalBackgroundColor: Colors.white,
+    backgroundColor: offWhite,
+    modalBackgroundColor: offWhite,
     constraints: const BoxConstraints(minWidth: double.infinity),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-  ); // BottomSheetThemeData
+  );
+
+  //! Dark
   static BottomSheetThemeData darkBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
-    backgroundColor: Colors.black,
-    modalBackgroundColor: Colors.black,
+    backgroundColor: brown,
+    modalBackgroundColor: brown,
     constraints: const BoxConstraints(minWidth: double.infinity),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-  ); // BottomSheetThemeData
+  );
 }

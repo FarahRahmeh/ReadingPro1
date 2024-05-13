@@ -11,13 +11,13 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         ///!Header
 
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
 
@@ -28,14 +28,14 @@ class LoginPage extends StatelessWidget {
               height: 250,
               child: Image(
                 image: AssetImage(
-                  Images.success,
+                  dark ? Images.success : Images.onboarding_1,
                 ),
               ),
             ),
 
             ///!Login Form
-            LoginForm(),
-            SizedBox(
+            const LoginForm(),
+            const SizedBox(
               height: 10,
             ),
 

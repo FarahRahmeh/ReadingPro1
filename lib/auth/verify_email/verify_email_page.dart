@@ -53,7 +53,7 @@ class VerifyEmailPage extends StatelessWidget {
                         labelText: "Email",
                         // border: OutlineInputBorder(),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: dark_brown)),
+                            borderSide: BorderSide(color: darkBrown)),
                       ), //Texts.email
                       validator: (value) => Validator.validateEmail(value),
                     ),

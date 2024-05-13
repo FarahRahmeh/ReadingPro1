@@ -16,11 +16,13 @@ class OnBoardingSkip extends StatelessWidget {
         top: DeviceUtils.getAppBarHeight(),
         child: TextButton(
           style: TextButton.styleFrom(
-              splashFactory: NoSplash.splashFactory, elevation: 0,),
+            splashFactory: NoSplash.splashFactory,
+            elevation: 0,
+          ),
           onPressed: () => OnBoardingController.instance.skipPage(),
           child: Text('Skip',
               style: TextStyle(
-                color: dark_brown,
+                color: darkBrown,
               )),
         ));
   }

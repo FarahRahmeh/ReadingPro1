@@ -8,7 +8,7 @@ class UserHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: light_brown,
+        color: lightBrown,
       ),
     );
   }

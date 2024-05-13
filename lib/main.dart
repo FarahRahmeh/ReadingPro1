@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
       initialBinding: GeneralBindings(),
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      theme: MyTheme.lightTheme,
-      darkTheme: MyTheme.darkTheme,
+      theme: MyAppTheme.lightTheme,
+      darkTheme: MyAppTheme.darkTheme,
       home: const LoginPage(),
     );
   }

@@ -19,13 +19,13 @@ class OnBoardingNext extends StatelessWidget {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             //shape: CircleBorder(),
-            backgroundColor: dark ? beige : dark_brown,
+            backgroundColor: dark ? beige : darkBrown,
           ),
           child: Icon(
             Iconsax.arrow_right_3_copy,
-            color: dark ? dark_brown : beige,
+            color: dark ? darkBrown : beige,
           ),
-          onPressed: () =>OnBoardingController.instance.nextPage(),
+          onPressed: () => OnBoardingController.instance.nextPage(),
         ));
   }
 }

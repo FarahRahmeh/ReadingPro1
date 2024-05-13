@@ -10,12 +10,12 @@ class Loaders {
       message,
       isDismissible: true,
       shouldIconPulse: true,
-      colorText: dark_brown,
+      colorText: darkBrown,
       backgroundColor: beige,
       snackPosition: SnackPosition.BOTTOM,
       duration: Duration(seconds: duration),
       margin: const EdgeInsets.all(10),
-      icon: const Icon(Iconsax.check, color: dark_brown),
+      icon: const Icon(Iconsax.check, color: darkBrown),
     );
   }
 
@@ -25,12 +25,12 @@ class Loaders {
       message,
       isDismissible: true,
       shouldIconPulse: true,
-      colorText: dark_brown,
-      backgroundColor: light_brown,
+      colorText: darkBrown,
+      backgroundColor: lightBrown,
       snackPosition: SnackPosition.BOTTOM,
       duration: Duration(seconds: 3),
       margin: const EdgeInsets.all(20),
-      icon: const Icon(Iconsax.warning_2, color: dark_brown),
+      icon: const Icon(Iconsax.warning_2, color: darkBrown),
     );
   }
 
@@ -40,12 +40,12 @@ class Loaders {
       message,
       isDismissible: true,
       shouldIconPulse: true,
-      colorText: dark_brown,
+      colorText: darkBrown,
       backgroundColor: pinkish,
       snackPosition: SnackPosition.BOTTOM,
       duration: Duration(seconds: 4),
       margin: const EdgeInsets.all(20),
-      icon: const Icon(Iconsax.warning_2, color: dark_brown),
+      icon: const Icon(Iconsax.warning_2, color: darkBrown),
     );
   }
 }

@@ -46,7 +46,7 @@ class AnimationLoaderWidget extends StatelessWidget {
             width: 250,
             child: OutlinedButton(
               onPressed: onActionPressed,
-              style: OutlinedButton.styleFrom(backgroundColor: dark_brown),
+              style: OutlinedButton.styleFrom(backgroundColor: darkBrown),
               child: Text(
                 actionText!,
                 //style: Theme.of(context).textTheme.bodyMedium.apply(color: TColors.light),

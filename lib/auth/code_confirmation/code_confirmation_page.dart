@@ -16,7 +16,7 @@ class ConfirmationCodePage extends StatelessWidget {
     final controller = Get.put(ConfirmationController());
 
     return Scaffold(
-      backgroundColor: off_white,
+      backgroundColor: offWhite,
       body: SingleChildScrollView(
         child: Form(
           key: controller.codeKey,
@@ -43,7 +43,7 @@ class ConfirmationCodePage extends StatelessWidget {
                     prefixIcon: Icon(Iconsax.code_1),
                     border: OutlineInputBorder(),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: dark_brown)),
+                        borderSide: BorderSide(color: darkBrown)),
                   ),
                   validator: (value) => Validator.validateCode(value),
                 ),

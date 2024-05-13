@@ -20,7 +20,7 @@ class FullScreenLoader {
       builder: (c) => Scaffold(
         //canPop: false,
         body: Container(
-          color: HelperFunctions.isDarkMode(Get.context!) ? dark_brown : beige,
+          color: HelperFunctions.isDarkMode(Get.context!) ? darkBrown : beige,
           width: double.infinity,
           height: double.infinity,
           child: Column(
