@@ -1,5 +1,7 @@
 import 'package:booktaste/common/widgets/appbar/appbar.dart';
+import 'package:booktaste/common/widgets/custom_shapes/Containers/primary_header_container.dart';
 import 'package:booktaste/utils/constans/colors.dart';
+import 'package:booktaste/utils/constans/texts.dart';
 import 'package:flutter/material.dart';
 
 class UserHomePage extends StatelessWidget {
@@ -7,54 +9,32 @@ class UserHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-            // children: [
-            //   PrimaryHeaderContainer(
-            //     child: Column(
-            //       children: [
-            //         MyAppBar(),
-            //       ],
-            //     ),
-            //   ),
-            // ],
-            ),
+        child: PrimaryHeaderContainer(
+          child: Column(
+            children: [
+              MyAppBar(
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(Texts.homeAppbarTitle,
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelMedium!
+                            .apply(color: MyColors.lightGrey)),
+                    Text(Texts.homeAppbarSubTitle,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineSmall!
+                            .apply(color: MyColors.white)),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
 }
-
-// class PrimaryHeaderContainer extends StatelessWidget {
-//   final Widget _child;
-//   const PrimaryHeaderContainer({super.key, required this.child});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return TCurvedEdgesWidget(
-//       child: SizedBox(
-//         height: 400,
-//         child: Container(
-//           color: MyColors.primary,
-//           child: Stack(
-//             /// [size_isInfinite] is not true! Error -> Read README.md file at [DESIGN ERRORS] i 1
-//             children: [
-//               /// -- Background Custom Shapes --
-//               Positioned(
-//                   top: -150,
-//                   right: -250,
-//                   child: TCircularContainer(
-//                       backgroundColor: MyColors.textWhite.withOpacity(0.8))),
-//               Positioned(
-//                   top: 100,
-//                   right: -300,
-//                   child: TCircularContainer(
-//                       backgroundColor: MyColors.textWhite.withOpacity(0.7))),
-//               _child,
-//             ],
-//           ), // Stack
-//         ), // Container
-//       ), // SizedBox
-//     ); // TCurvedEdgesWidget
-//   }
-// }

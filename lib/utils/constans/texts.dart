@@ -41,4 +41,8 @@ class Texts {
   static const String confirmDetailHeading = "Verify your email address!";
   static const String confirmDetailHeading2 =
       "Congratulations! You’ve Successfully Registered! Verify Your Email to Start Shopping and Experience A World of Unrivaled Deals And Personalized Offerings.";
+
+  ///Home Page User
+  static const String homeAppbarTitle = "HELLO ,";
+  static const String homeAppbarSubTitle = "Good day for Reading !";
 }
