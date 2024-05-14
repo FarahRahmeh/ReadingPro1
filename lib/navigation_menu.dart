@@ -42,9 +42,9 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
-    const ForgetPasswordPage(),
     const UserHomePage(),
-    const UserHomePage(),
-    const UserHomePage()
+    const AdminHomePage(),
+    const AdminHomePage(),
+    const AdminHomePage()
   ];
 }

@@ -1,3 +1,4 @@
+import 'package:booktaste/admin/admin_home/admin_home_page.dart';
 import 'package:booktaste/auth/login/login_page.dart';
 import 'package:booktaste/auth/register/register_page.dart';
 import 'package:booktaste/auth/verify_email/verify_email_page.dart';
@@ -35,7 +36,9 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MyAppTheme.lightTheme,
       darkTheme: MyAppTheme.darkTheme,
-      home: const LoginPage(),
+      home: const NavigationMenu(),
+      //home: const LoginPage(),
     );
   }
 }
+

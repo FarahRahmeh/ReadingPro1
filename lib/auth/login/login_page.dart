@@ -1,4 +1,4 @@
-import 'package:booktaste/common/widgets/divider_with_text.dart';
+import 'package:booktaste/common/widgets/divider/divider_with_text.dart';
 import 'package:booktaste/utils/constans/images.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';

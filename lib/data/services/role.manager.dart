@@ -16,7 +16,7 @@ Future<void> saveRole(String role) async {
 
 void navigateBasedOnRole() async {
   final role = await getRole(); // Retrieve the role
-  if (role == 'master_admin') {
+  if (role == 'master_admin' || role == 'admin') {
     Get.offAll(() => const ForgetPasswordPage());
 
     //todo Change the route name

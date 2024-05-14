@@ -43,12 +43,13 @@ class LoginController extends GetxController {
 
       final response = await _authRepository.login(
           emailController.text.trim(), passwordController.text.trim());
-      print(response.body.toString());
+      //print(response.body.toString());
 
       final userData = json.decode(response.body); // to string
       if (response.statusCode == 200) {
         final token = userData['token'];
-        final role = userData['role'];
+        final role = userData['user']['role'];
+        // final name = userData['user']['name'];
 
         await saveToken(token);
         // UserCredential(userRole: role);
@@ -56,13 +57,11 @@ class LoginController extends GetxController {
 
         navigateBasedOnRole();
 
+        //print(name.toString());
         print(token + ' ' + role);
-      } else if (response.statusCode == 401)
-
-      ///!Wrong Password
-      {
+      } else if (response.statusCode == 401) {
+        ///!Wrong Password
         //final message = userData['message'];
-
         Loaders.errorSnackBAr(title: 'login failed: ', message: userData);
       } else if (response.statusCode == 422) {
         // final message = userData['errors']['email'][0].toString();
