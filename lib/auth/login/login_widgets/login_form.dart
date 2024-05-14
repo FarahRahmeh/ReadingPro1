@@ -1,12 +1,9 @@
 import 'package:booktaste/auth/login/login_controller.dart';
 import 'package:booktaste/auth/verify_email/verify_email_page.dart';
-import 'package:booktaste/data/services/role.manager.dart';
 import 'package:booktaste/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-
-import '../../register/register_page.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({

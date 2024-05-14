@@ -8,7 +8,7 @@ const beige = Color(0xffFFEBDC);
 const beige2 = Color(0xffF6E3E0);
 const pinkish = Color(0xffE68888);
 const pinkishMore = Color(0xffE27070);
-const grey = Color(0xffD1C4C4);
+const gray = Color(0xffD1C4C4);
 
 final List<Color> gradientColors = [
   offWhite,
@@ -17,7 +17,7 @@ final List<Color> gradientColors = [
   brown,
   beige,
   pinkish,
-  grey,
+  gray,
 ];
 
 final List<Gradient> gradients = [
@@ -33,7 +33,7 @@ final List<Gradient> gradients = [
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   ),
-  //~ dark brown adn beige
+  //~ dark brown and beige
   const LinearGradient(
     colors: [darkBrown, beige],
     begin: Alignment.topCenter,
@@ -49,7 +49,53 @@ final List<Gradient> gradients = [
 
 class MyColors {
   MyColors._();
-  static const Color primary = beige;
 
-//secondary   accent  textPrimary  ..light dark ...
+  ///App Basic Colors
+  static const Color primary = beige2;
+  static const Color secondary = pinkish;
+  static const Color accent = lightBrown;
+
+  ///Gradient Colors
+  static const Gradient linerGradient = LinearGradient(
+      begin: Alignment(0.0, 0.0),
+      end: Alignment(0.707, -0.707),
+      colors: [pinkish, beige2, beige]);
+
+  ///Text Colors
+  static const Color textPrimary = brown;
+  static const Color textSecondary = darkBrown;
+  static const Color textWhite = offWhite;
+
+  /// Background Colors
+  static const Color light = offWhite;
+  static const Color dark = Color(0xff212121);
+  static const Color primaryBackground = offWhite;
+
+  ///Background Container Colors
+  static const Color lightContainer = offWhite;
+  static Color darkContainer = offWhite.withOpacity(0.1);
+
+  ///Button Colors
+  static const Color buttonPrimary = darkBrown;
+  static const Color buttonSecondary = lightBrown;
+  static const Color buttonDisabled = gray;
+
+  ///Border Colors
+  static const Color borderPrimary = beige;
+  static const Color borderSecondary = offWhite;
+
+  ///Error and Validation Colors
+  static const Color error = pinkishMore;
+  static const Color success = Color.fromARGB(255, 165, 214, 167);
+  static const Color warning = Color.fromARGB(255, 255, 224, 178);
+  static const Color info = darkBrown;
+
+  ///Neutral Shades
+  static const Color black = Color(0xff212121);
+  static const Color darkestGrey = Color.fromARGB(255, 59, 59, 59);
+  static const Color darkGrey = Color.fromARGB(255, 113, 112, 112);
+  static const Color grey = Color.fromARGB(255, 169, 169, 169);
+  static const Color softGrey = Color.fromARGB(255, 217, 217, 217);
+  static const Color lightGrey = Color.fromARGB(255, 235, 234, 234);
+  static const Color white = Colors.white;
 }

@@ -37,7 +37,7 @@ class MyAppTheme {
     useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: lightBrown,
-    scaffoldBackgroundColor: const Color(0xff212121),
+    scaffoldBackgroundColor: MyColors.black,
     textTheme: MyTextTheme.darkTextTheme,
     chipTheme: MyChipTheme.darkChipTheme,
     appBarTheme: MyAppBarTheme.darkAppBarTheme,

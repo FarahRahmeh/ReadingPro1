@@ -6,8 +6,8 @@ class MyTextFormFieldTheme {
 //! Light
   static InputDecorationTheme lightInputDecorationTheme = InputDecorationTheme(
     errorMaxLines: 3,
-    prefixIconColor: grey,
-    suffixIconColor: grey,
+    prefixIconColor: gray,
+    suffixIconColor: gray,
     labelStyle: const TextStyle().copyWith(fontSize: 14, color: brown),
     hintStyle: const TextStyle().copyWith(fontSize: 14, color: brown),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
@@ -15,11 +15,11 @@ class MyTextFormFieldTheme {
         const TextStyle().copyWith(color: brown.withOpacity(0.8)),
     border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
-      borderSide: const BorderSide(width: 1, color: grey),
+      borderSide: const BorderSide(width: 1, color: gray),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
-      borderSide: const BorderSide(width: 1, color: grey),
+      borderSide: const BorderSide(width: 1, color: gray),
     ),
     focusedBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
@@ -38,19 +38,19 @@ class MyTextFormFieldTheme {
   //! Dark
   static InputDecorationTheme darkInputDecorationTheme = InputDecorationTheme(
     errorMaxLines: 2,
-    prefixIconColor: grey,
-    suffixIconColor: grey,
+    prefixIconColor: gray,
+    suffixIconColor: gray,
     labelStyle: const TextStyle().copyWith(fontSize: 14, color: offWhite),
     hintStyle: const TextStyle().copyWith(fontSize: 14, color: offWhite),
     floatingLabelStyle:
         const TextStyle().copyWith(color: offWhite.withOpacity(0.8)),
     border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
-      borderSide: const BorderSide(width: 1, color: grey),
+      borderSide: const BorderSide(width: 1, color: gray),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
-      borderSide: const BorderSide(width: 1, color: grey),
+      borderSide: const BorderSide(width: 1, color: gray),
     ),
     focusedBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
