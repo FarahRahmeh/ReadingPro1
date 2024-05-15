@@ -2,8 +2,6 @@ import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:booktaste/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar(
