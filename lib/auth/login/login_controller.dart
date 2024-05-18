@@ -61,8 +61,8 @@ class LoginController extends GetxController {
         print(token + ' ' + role);
       } else if (response.statusCode == 401) {
         ///!Wrong Password
-        //final message = userData['message'];
-        Loaders.errorSnackBAr(title: 'login failed: ', message: userData);
+        final message = userData['message'];
+        Loaders.errorSnackBAr(title: 'login failed: ', message: message);
       } else if (response.statusCode == 422) {
         // final message = userData['errors']['email'][0].toString();
         final message = userData['message'];
