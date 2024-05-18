@@ -1,9 +1,13 @@
 import 'package:booktaste/admin/admin_home/admin_home_page.dart';
+import 'package:booktaste/auth/code_confirmation/code_confirmation_page.dart';
 import 'package:booktaste/auth/login/login_page.dart';
 import 'package:booktaste/auth/register/register_page.dart';
+import 'package:booktaste/auth/success_screen/success_scree.dart';
 import 'package:booktaste/auth/verify_email/verify_email_page.dart';
 import 'package:booktaste/binding/general_bindings.dart';
+import 'package:booktaste/common/features/on_boarding/onboarding_pages.dart';
 import 'package:booktaste/navigation_menu.dart';
+import 'package:booktaste/user/user_home/user_home_page.dart';
 import 'package:booktaste/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,13 +35,32 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      ///Get Bindings
       initialBinding: GeneralBindings(),
+
+      ///!Routes
+      getPages: [
+        GetPage(name: '/OnBoarding', page: () => const OnBoardingPages()),
+        GetPage(name: '/Login', page: () => const LoginPage()),
+        GetPage(name: '/register', page: () => const RegisterPage()),
+        GetPage(name: '/email_verify', page: () => const VerifyEmailPage()),
+        GetPage(
+            name: '/confirm_email_code',
+            page: () => const ConfirmationCodePage()),
+        GetPage(name: '/user_home', page: () => const UserHomePage()),
+        GetPage(name: '/admin_home', page: () => const AdminHomePage()),
+        GetPage(name: '/navigation', page: () => const NavigationMenu()),
+      ],
+
+      ///! initial Route:
+      initialRoute: '/navigation',
+
+      ///Other
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       theme: MyAppTheme.lightTheme,
       darkTheme: MyAppTheme.darkTheme,
-      home: const NavigationMenu(),
-      //home: const LoginPage(),
+      //home: const NavigationMenu(),
     );
   }
 }
