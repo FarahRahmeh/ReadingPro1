@@ -2,7 +2,6 @@ import 'package:booktaste/admin/admin_home/admin_home_page.dart';
 import 'package:booktaste/auth/code_confirmation/code_confirmation_page.dart';
 import 'package:booktaste/auth/login/login_page.dart';
 import 'package:booktaste/auth/register/register_page.dart';
-import 'package:booktaste/auth/success_screen/success_scree.dart';
 import 'package:booktaste/auth/verify_email/verify_email_page.dart';
 import 'package:booktaste/binding/general_bindings.dart';
 import 'package:booktaste/common/features/on_boarding/onboarding_pages.dart';
@@ -12,7 +11,6 @@ import 'package:booktaste/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:logger/logger.dart';
 
 Future<void> main() async {
   ///Widgets Binding
@@ -60,7 +58,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MyAppTheme.lightTheme,
       darkTheme: MyAppTheme.darkTheme,
-      //home: const NavigationMenu(),
+      //home
     );
   }
 }
