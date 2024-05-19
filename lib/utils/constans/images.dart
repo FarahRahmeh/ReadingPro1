@@ -11,4 +11,7 @@ class Images {
 
   ///Categories Icons
   static const String book = "assets/images/bookIcon.png";
+
+  ///Banner
+  static const String promoBanner = "assets/images/banner.jpg";
 }
