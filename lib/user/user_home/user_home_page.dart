@@ -14,7 +14,7 @@ class UserHomePage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: PrimaryHeaderContainer(
-          child: Column(
+          child: const Column(
             children: [
               ///Appbar
               UserHomePageAppbar(),
@@ -23,6 +23,7 @@ class UserHomePage extends StatelessWidget {
               ),
 
               ///Searchbar
+              ///todo here should be a Row to add the "ADD Book" button
               SearchContainer(
                 text: Texts.homeSearchTitle,
               ),
