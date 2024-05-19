@@ -45,4 +45,5 @@ class Texts {
   ///Home Page User
   static const String homeAppbarTitle = "HELLO ,";
   static const String homeAppbarSubTitle = "Good day for Reading !";
+  static const String homeSearchTitle = "Search Book ..";
 }
