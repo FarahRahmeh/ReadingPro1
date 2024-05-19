@@ -8,4 +8,7 @@ class Images {
   static const String onboarding_1 = "assets/images/on_boarding/book_cup.png";
   static const String onboarding_2 = "assets/images/on_boarding/book_cup.png";
   static const String onboarding_3 = "assets/images/on_boarding/book_cup.png";
+
+  ///Categories Icons
+  static const String book = "assets/images/bookIcon.png";
 }

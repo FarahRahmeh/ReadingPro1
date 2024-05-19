@@ -4,7 +4,9 @@ import 'package:booktaste/utils/constans/texts.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/widgets/custom_shapes/Containers/search_container.dart';
+import '../../common/widgets/texts/section_heading.dart';
 import 'user_home_widgets/user_home_appbar.dart';
+import 'user_home_widgets/user_home_categories.dart';
 
 class UserHomePage extends StatelessWidget {
   const UserHomePage({super.key});
@@ -14,15 +16,16 @@ class UserHomePage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: PrimaryHeaderContainer(
-          child: const Column(
+          height: 400,
+          child: Column(
             children: [
-              ///Appbar
+              ///!Appbar
               UserHomePageAppbar(),
               SizedBox(
                 height: Sizes.spaceBtwSections,
               ),
 
-              ///Searchbar
+              ///!Searchbar
               ///todo here should be a Row to add the "ADD Book" button
               SearchContainer(
                 text: Texts.homeSearchTitle,
@@ -31,7 +34,26 @@ class UserHomePage extends StatelessWidget {
                 height: Sizes.spaceBtwSections,
               ),
 
-              ///Categories
+              ///! ---Categories Section--
+              Padding(
+                padding: EdgeInsets.only(left: Sizes.defaultSpace),
+                child: Column(
+                  children: [
+                    ///---Heading
+                    SectionHeading(
+                      title: 'Categories', //~------------ same color
+                      showActionButton: false,
+                    ),
+                    SizedBox(
+                      height: Sizes.spaceBtwItems,
+                    ),
+
+                    ///---Categories
+                    UserHomeCategories(), //--->inside here //~------------ same color
+                  ],
+                ),
+              )
+
               ///Cafes
               ///.....
             ],
