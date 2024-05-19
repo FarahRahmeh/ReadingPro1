@@ -7,6 +7,7 @@ import 'package:booktaste/binding/general_bindings.dart';
 import 'package:booktaste/common/features/on_boarding/onboarding_pages.dart';
 import 'package:booktaste/navigation_menu.dart';
 import 'package:booktaste/user/user_home/user_home_page.dart';
+import 'package:booktaste/user/user_profile/user_profile.dart';
 import 'package:booktaste/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/user_home', page: () => const UserHomePage()),
         GetPage(name: '/admin_home', page: () => const AdminHomePage()),
         GetPage(name: '/navigation', page: () => const NavigationMenu()),
+        GetPage(name: '/user_profile', page: () => const UserProfile()),
       ],
 
       ///! initial Route:
