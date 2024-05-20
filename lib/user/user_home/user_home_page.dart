@@ -1,5 +1,6 @@
 import 'package:booktaste/common/widgets/custom_shapes/Containers/circular_container.dart';
 import 'package:booktaste/common/widgets/custom_shapes/Containers/primary_header_container.dart';
+import 'package:booktaste/common/widgets/layouts/grid_layout.dart';
 import 'package:booktaste/common/widgets/products/product_card/product_card_vertical.dart';
 import 'package:booktaste/utils/constans/colors.dart';
 import 'package:booktaste/utils/constans/images.dart';
@@ -20,7 +21,7 @@ class UserHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: SingleChildScrollView(
       ///!Heading
       child: Column(
@@ -83,7 +84,8 @@ class UserHomePage extends StatelessWidget {
           SizedBox(
             height: Sizes.spaceBtwSections,
           ),
-          ProductCardVertical(),
+          MyGridView(
+              itemCount: 4, itemBuilder: (_, index) => ProductCardVertical())
         ],
       ),
     ));

@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../icons/circular_icon.dart';
+import '../../texts/product_price.dart';
 
 class ProductCardVertical extends StatelessWidget {
   const ProductCardVertical({super.key});
@@ -22,8 +23,10 @@ class ProductCardVertical extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        width: 180,
-        padding: EdgeInsets.all(1),
+        margin: EdgeInsets.all(4),
+        width: 160,
+        //180
+        padding: EdgeInsets.all(1), //padding was 1
         decoration: BoxDecoration(
           boxShadow: [ShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(Sizes.productImageRadius),
@@ -33,7 +36,7 @@ class ProductCardVertical extends StatelessWidget {
           children: [
             ///Thumbanil ,WishList button ,Discount Tag
             RoundedContainer(
-              height: 180,
+              height: 160,
               padding: const EdgeInsets.all(Sizes.sm),
               backgroundColor: dark ? MyColors.dark : MyColors.light,
               child: Stack(
@@ -108,16 +111,11 @@ class ProductCardVertical extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        '\$35.5',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
+                      ProductPriceText(price: '30.99'),
                       // /
                       Container(
                         decoration: BoxDecoration(
-                          color: MyColors.dark,
+                          color: lightBrown,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(Sizes.cardRadiusMd),
                             bottomRight:
@@ -136,7 +134,7 @@ class ProductCardVertical extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
