@@ -2,9 +2,7 @@ import 'package:booktaste/common/styles/shadows.dart';
 import 'package:booktaste/common/widgets/custom_shapes/Containers/rounded_container.dart';
 import 'package:booktaste/common/widgets/images/rounded_image.dart';
 import 'package:booktaste/common/widgets/texts/product_title.dart';
-import 'package:booktaste/common/widgets/texts/x_title_text.dart';
 import 'package:booktaste/utils/constans/colors.dart';
-import 'package:booktaste/utils/constans/enums.dart';
 import 'package:booktaste/utils/constans/images.dart';
 import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
@@ -13,6 +11,7 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../icons/circular_icon.dart';
 import '../../texts/product_price.dart';
+import '../../texts/title_with_icon.dart';
 
 class ProductCardVertical extends StatelessWidget {
   const ProductCardVertical({super.key});
@@ -132,41 +131,6 @@ class ProductCardVertical extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class TextTitleWithIcon extends StatelessWidget {
-  const TextTitleWithIcon({
-    super.key,
-    required this.title,
-    this.maxLines = 1,
-    this.textColor = brown,
-    this.iconColor = MyColors.primary,
-    this.textAlign = TextAlign.center,
-    this.titleTextSize = TextSizes.small,
-  });
-  final String title;
-  final int maxLines;
-  final Color? textColor, iconColor;
-  final TextAlign? textAlign;
-  final TextSizes titleTextSize;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Flexible(
-          child: XTitleText(
-            title: title,
-            color: textColor,
-            maxLines: maxLines,
-            textAlign: textAlign,
-            xTextSize: titleTextSize,
-          ),
-        ),
-        Icon(Iconsax.path_copy, color: iconColor, size: Sizes.iconXs),
-        const SizedBox(width: Sizes.xs),
-      ],
     );
   }
 }

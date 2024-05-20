@@ -1,39 +1,44 @@
 import 'package:booktaste/common/widgets/appbar/appbar.dart';
-import 'package:booktaste/common/widgets/custom_shapes/Containers/circular_container.dart';
+import 'package:booktaste/common/widgets/appbar/tapbar.dart';
+import 'package:booktaste/common/widgets/custom_shapes/Containers/rounded_container.dart';
 import 'package:booktaste/common/widgets/custom_shapes/Containers/search_container.dart';
-import 'package:booktaste/common/widgets/images/circular_image.dart';
 import 'package:booktaste/common/widgets/layouts/grid_layout.dart';
 import 'package:booktaste/common/widgets/notification/notification_counter_icon.dart';
 import 'package:booktaste/common/widgets/texts/section_heading.dart';
-import 'package:booktaste/common/widgets/texts/x_title_text.dart';
+import 'package:booktaste/user/user_library/user_library_widgets/category_tab.dart';
 import 'package:booktaste/utils/constans/colors.dart';
-import 'package:booktaste/utils/constans/enums.dart';
 import 'package:booktaste/utils/constans/images.dart';
 import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 
-import '../../common/widgets/custom_shapes/Containers/rounded_container.dart';
+import '../../common/widgets/category/x_card.dart';
+import '../../common/widgets/category/x_show_case.dart';
 
 class UserLibrary extends StatelessWidget {
   const UserLibrary({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: MyAppBar(
-        title: Text(
-          'Library',
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-        actions: [
-          NotificationCounterIcon(
-            onPressed: () {},
-            iconColor: lightBrown,
+    return DefaultTabController(
+      length: 5, //= number of tabs
+      child: Scaffold(
+        //!Appbar
+        appBar: MyAppBar(
+          title: Text(
+            'Library',
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
-        ],
-      ),
-      body: NestedScrollView(
+          actions: [
+            NotificationCounterIcon(
+              onPressed: () {},
+              iconColor: lightBrown,
+            ),
+          ],
+        ),
+        //!Body
+        body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
               SliverAppBar(
@@ -71,63 +76,36 @@ class UserLibrary extends StatelessWidget {
                           mainAxisExtent: 80,
                           itemCount: 4,
                           itemBuilder: (_, index) {
-                            return GestureDetector(
-                              onTap: () {},
-                              child: RoundedContainer(
-                                margin: const EdgeInsets.all(
-                                    2), //* ---Increases this value might make a pixels overflow
-                                padding: const EdgeInsets.all(Sizes.sm),
-                                showBorder: true,
-                                backgroundColor: Colors.transparent,
-                                child: Row(
-                                  children: [
-                                    //--Icon
-                                    Flexible(
-                                      child: CircularImage(
-                                        image: Images.onboarding_1,
-                                        isNetworkImg: false,
-                                        backgroundColor: Colors.transparent,
-                                        // overlayColor: HelperFunctions.isDarkMode(context)
-                                        //     ? MyColors.black
-                                        //     : MyColors.white,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                        height: Sizes.spaceBtwItems / 2),
-
-                                    //--Text
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          XTitleText(
-                                            title: 'Book',
-                                            xTextSize: TextSizes.large,
-                                          ),
-                                          Text(
-                                            'blah blah blah........',
-                                            overflow: TextOverflow.ellipsis,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .labelMedium,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
+                            return XCard();
                           }),
                     ],
                   ),
                 ),
+
+                ///! Tabs
+                bottom: MyTapBar(
+                  tabs: [
+                    Tab(child: Text('Sports')),
+                    Tab(child: Text('Science')),
+                    Tab(child: Text('Electronics')),
+                    Tab(child: Text('Clothes')),
+                    Tab(child: Text('Cosmetics')),
+                  ],
+                ),
               ),
             ];
           },
-          body: Container()),
+          body: TabBarView(
+            children: [
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
