@@ -20,8 +20,8 @@ class MyGridView extends StatelessWidget {
     return GridView.builder(
       itemCount: itemCount,
       shrinkWrap: true,
-      // padding: EdgeInsets.zero,
-      padding: EdgeInsets.all(Sizes.md),
+      padding: EdgeInsets.zero,
+      // padding: EdgeInsets.all(Sizes.md),
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

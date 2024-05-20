@@ -2,7 +2,9 @@ import 'package:booktaste/common/styles/shadows.dart';
 import 'package:booktaste/common/widgets/custom_shapes/Containers/rounded_container.dart';
 import 'package:booktaste/common/widgets/images/rounded_image.dart';
 import 'package:booktaste/common/widgets/texts/product_title.dart';
+import 'package:booktaste/common/widgets/texts/x_title_text.dart';
 import 'package:booktaste/utils/constans/colors.dart';
+import 'package:booktaste/utils/constans/enums.dart';
 import 'package:booktaste/utils/constans/images.dart';
 import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
@@ -20,6 +22,7 @@ class ProductCardVertical extends StatelessWidget {
     final dark = HelperFunctions.isDarkMode(context);
 
     //~ Container with side padding ,color, edges, radius and shadow.
+
     return GestureDetector(
       onTap: () {},
       child: Container(
@@ -38,7 +41,9 @@ class ProductCardVertical extends StatelessWidget {
             RoundedContainer(
               height: 160,
               padding: const EdgeInsets.all(Sizes.sm),
-              backgroundColor: dark ? MyColors.dark : MyColors.light,
+              backgroundColor: dark
+                  ? Colors.transparent
+                  : MyColors.light, //~--------the card color
               child: Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -93,51 +98,75 @@ class ProductCardVertical extends StatelessWidget {
                   SizedBox(
                     height: Sizes.spaceBtwItems / 2,
                   ),
-                  Row(
-                    children: [
-                      const Icon(Iconsax.path_copy,
-                          color: brown, size: Sizes.iconXs),
-                      const SizedBox(width: Sizes.xs),
-                      Text(
-                        'Author',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                    ],
-                  ),
-
-                  //!price
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ProductPriceText(price: '30.99'),
-                      // /
-                      Container(
-                        decoration: BoxDecoration(
-                          color: lightBrown,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(Sizes.cardRadiusMd),
-                            bottomRight:
-                                Radius.circular(Sizes.productImageRadius),
-                          ),
-                        ),
-                        child: SizedBox(
-                          width: Sizes.iconLg * 1.2,
-                          height: Sizes.iconLg * 1.2,
-                          child: Center(
-                              child:
-                                  const Icon(Icons.add, color: MyColors.white)),
-                        ),
-                      ),
-                    ],
-                  ),
+                  TextTitleWithIcon(title: 'Author'),
                 ],
               ),
+            ),
+            const Spacer(),
+            //! Price Row
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: Sizes.sm),
+                  child: ProductPriceText(price: '30.99'),
+                ),
+                // /
+                Container(
+                  decoration: const BoxDecoration(
+                    color: lightBrown,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(Sizes.cardRadiusMd),
+                      bottomRight: Radius.circular(Sizes.productImageRadius),
+                    ),
+                  ),
+                  child: const SizedBox(
+                    width: Sizes.iconLg * 1.2,
+                    height: Sizes.iconLg * 1.2,
+                    child:
+                        Center(child: Icon(Icons.add, color: MyColors.white)),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class TextTitleWithIcon extends StatelessWidget {
+  const TextTitleWithIcon({
+    super.key,
+    required this.title,
+    this.maxLines = 1,
+    this.textColor = brown,
+    this.iconColor = MyColors.primary,
+    this.textAlign = TextAlign.center,
+    this.titleTextSize = TextSizes.small,
+  });
+  final String title;
+  final int maxLines;
+  final Color? textColor, iconColor;
+  final TextAlign? textAlign;
+  final TextSizes titleTextSize;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Flexible(
+          child: XTitleText(
+            title: title,
+            color: textColor,
+            maxLines: maxLines,
+            textAlign: textAlign,
+            xTextSize: titleTextSize,
+          ),
+        ),
+        Icon(Iconsax.path_copy, color: iconColor, size: Sizes.iconXs),
+        const SizedBox(width: Sizes.xs),
+      ],
     );
   }
 }

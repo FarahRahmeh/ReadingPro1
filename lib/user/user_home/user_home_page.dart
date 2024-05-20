@@ -73,19 +73,39 @@ class UserHomePage extends StatelessWidget {
 
           ///! Body
           Padding(
-            padding: const EdgeInsets.all(Sizes.defaultSpace),
-            child: PromoSlider(banners: [
-              Images.promoBanner,
-              Images.success,
-              Images.promoBanner,
-              Images.onboarding_1,
-            ]),
+            padding: const EdgeInsets.all(Sizes.md), //Sizes.defultSpace
+            child: Column(
+              children: [
+                ///! Promo Slider
+                PromoSlider(
+                  banners: [
+                    Images.promoBanner,
+                    Images.success,
+                    Images.promoBanner,
+                    Images.onboarding_1,
+                  ],
+                ),
+                const SizedBox(
+                  height: Sizes.spaceBtwSections,
+                ),
+
+                //! Heading
+                const SectionHeading(
+                  title: 'Popular Books',
+                  
+                ),
+                const SizedBox(
+                  height: Sizes.spaceBtwItems,
+                ),
+
+                ///!Popular products
+                MyGridView(
+                  itemCount: 4,
+                  itemBuilder: (_, index) => ProductCardVertical(),
+                ),
+              ],
+            ),
           ),
-          SizedBox(
-            height: Sizes.spaceBtwSections,
-          ),
-          MyGridView(
-              itemCount: 4, itemBuilder: (_, index) => ProductCardVertical())
         ],
       ),
     ));

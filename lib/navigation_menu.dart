@@ -1,5 +1,6 @@
 import 'package:booktaste/admin/admin_home/admin_home_page.dart';
 import 'package:booktaste/user/user_home/user_home_page.dart';
+import 'package:booktaste/user/user_library/user_library.dart';
 import 'package:booktaste/user/user_profile/user_profile.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class NavigationMenu extends StatelessWidget {
               controller.selectedIndex.value = index,
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
+            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Library'),
             NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist'),
             NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
           ],
@@ -43,7 +44,7 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
     const UserHomePage(),
-    const AdminHomePage(),
+    const UserLibrary(),
     const AdminHomePage(),
     const UserProfile()
   ];
