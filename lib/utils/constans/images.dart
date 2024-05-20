@@ -14,4 +14,14 @@ class Images {
 
   ///Banner
   static const String promoBanner = "assets/images/banner.jpg";
+
+  ///book covers
+  static const String cover1 = "assets/images/cover1.jpg";
+  static const String cover2 = "assets/images/cover2.jpg";
+  static const String cover3 = "assets/images/cover3.jpg";
+  static const String cover4 = "assets/images/cover4.jpg";
+  static const String cover5 = "assets/images/cover5.jpg";
+  static const String cover6 = "assets/images/cover6.jpg";
+  static const String cover7 = "assets/images/cover7.jpg";
+  static const String cover8 = "assets/images/cover8.jpg";
 }

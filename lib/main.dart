@@ -39,8 +39,8 @@ class MyApp extends StatelessWidget {
 
       ///!Routes
       getPages: [
-        GetPage(name: '/OnBoarding', page: () => const OnBoardingPages()),
-        GetPage(name: '/Login', page: () => const LoginPage()),
+        GetPage(name: '/onBoarding', page: () => const OnBoardingPages()),
+        GetPage(name: '/login', page: () => const LoginPage()),
         GetPage(name: '/register', page: () => const RegisterPage()),
         GetPage(name: '/email_verify', page: () => const VerifyEmailPage()),
         GetPage(

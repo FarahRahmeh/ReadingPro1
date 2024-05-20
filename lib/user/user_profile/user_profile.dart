@@ -1,5 +1,5 @@
 import 'package:booktaste/common/widgets/appbar/appbar.dart';
-import 'package:booktaste/common/widgets/image/circular_image.dart';
+import 'package:booktaste/common/widgets/images/circular_image.dart';
 import 'package:booktaste/common/widgets/texts/section_heading.dart';
 import 'package:booktaste/user/user_profile/user_profile_widgets/profile_menu.dart';
 import 'package:booktaste/utils/constans/colors.dart';

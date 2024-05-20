@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../common/widgets/custom_shapes/Containers/circular_container.dart';
-import '../../../common/widgets/image/rounded_image.dart';
+import '../../../common/widgets/images/rounded_image.dart';
 import '../../../utils/constans/colors.dart';
 import '../../../utils/constans/images.dart';
 import '../../../utils/constans/sizes.dart';
