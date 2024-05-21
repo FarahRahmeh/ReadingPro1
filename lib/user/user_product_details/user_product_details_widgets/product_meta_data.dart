@@ -1,8 +1,6 @@
 import 'package:booktaste/common/widgets/images/circular_image.dart';
 import 'package:booktaste/common/widgets/texts/product_title.dart';
-import 'package:booktaste/common/widgets/texts/title_with_icon.dart';
 import 'package:booktaste/utils/constans/colors.dart';
-import 'package:booktaste/utils/constans/enums.dart';
 import 'package:booktaste/utils/constans/images.dart';
 import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:flutter/material.dart';

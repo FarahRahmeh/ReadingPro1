@@ -4,6 +4,18 @@ import 'package:intl/intl.dart';
 
 class HelperFunctions {
   //colors
+  static Color? getColor(String value) {
+    // Define your product specific colors here
+    if (value == 'Green') {
+      return Colors.green;
+    } else if (value == 'Red') {
+      return Colors.red;
+    } else if (value == 'Black') {
+      return Colors.black;
+    }
+
+    ///....so on
+  }
 
   static void showSnackBar(String message) {
     ScaffoldMessenger.of(Get.context!)

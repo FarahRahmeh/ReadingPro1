@@ -6,19 +6,19 @@ class MyChipTheme {
 
   //! Light
   static ChipThemeData lightChipTheme = ChipThemeData(
-    disabledColor: gray.withOpacity(0.4),
-    labelStyle: const TextStyle(color: brown),
+    disabledColor: MyColors.grey.withOpacity(0.5),
+    labelStyle: const TextStyle(color: MyColors.black),
     selectedColor: lightBrown,
     padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
-    checkmarkColor: offWhite,
+    checkmarkColor: Colors.white,
   );
 
   //!Dark
   static ChipThemeData darkChipTheme = const ChipThemeData(
-    disabledColor: gray,
-    labelStyle: TextStyle(color: offWhite),
+    disabledColor: MyColors.darkGrey,
+    labelStyle: TextStyle(color: Colors.white),
     selectedColor: lightBrown,
     padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
-    checkmarkColor: offWhite,
+    checkmarkColor: Colors.white,
   );
 }
