@@ -1,8 +1,10 @@
 import 'package:booktaste/common/widgets/texts/section_heading.dart';
 import 'package:booktaste/user/user_product_details/user_product_details_widgets/product_meta_data.dart';
+import 'package:booktaste/user/user_product_reviews_and_rating/product_review_page.dart';
 import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 // import 'package:readmore/readmore.dart';
 
@@ -95,8 +97,9 @@ class ProductDetailsPage extends StatelessWidget {
                         title: 'Reviews (222)',
                       ),
                       IconButton(
-                        onPressed: () {},
-                        icon: Icon(Iconsax.arrow_right_3_copy),
+                        onPressed: () =>
+                            Get.to(() => const ProductReviewsPage()),
+                        icon: const Icon(Iconsax.arrow_right_3_copy),
                       ),
                     ],
                   ),
