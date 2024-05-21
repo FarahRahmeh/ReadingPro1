@@ -5,10 +5,12 @@ import 'package:booktaste/auth/register/register_page.dart';
 import 'package:booktaste/auth/verify_email/verify_email_page.dart';
 import 'package:booktaste/binding/general_bindings.dart';
 import 'package:booktaste/common/features/on_boarding/onboarding_pages.dart';
+import 'package:booktaste/user/user_product_details/product_details_page.dart';
 import 'package:booktaste/navigation_menu.dart';
 import 'package:booktaste/user/user_home/user_home_page.dart';
 import 'package:booktaste/user/user_library/user_library.dart';
 import 'package:booktaste/user/user_profile/user_profile.dart';
+import 'package:booktaste/user/user_setting/user_setting_page.dart';
 import 'package:booktaste/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -54,11 +56,13 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/navigation', page: () => const NavigationMenu()),
         GetPage(name: '/user_profile', page: () => const UserProfile()),
         GetPage(name: '/user_library', page: () => const UserLibrary()),
-        GetPage(name: '/favourite', page: () => const FavouritePage())
+        GetPage(name: '/favourite', page: () => const FavouritePage()),
+        GetPage(name: '/user_settings', page: () => const UserSettingsPage()),
+        GetPage(name: '/details', page: () => const ProductDetailsPage()),
       ],
 
       ///! initial Route:
-      initialRoute: '/navigation',
+      initialRoute: '/details',
 
       ///Other
       debugShowCheckedModeBanner: false,

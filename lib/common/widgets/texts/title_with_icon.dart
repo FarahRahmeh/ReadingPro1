@@ -35,7 +35,7 @@ class TextTitleWithIcon extends StatelessWidget {
           ),
         ),
         Icon(Iconsax.path_copy, color: iconColor, size: Sizes.iconXs),
-        const SizedBox(width: Sizes.xs),
+        SizedBox(width: Sizes.xs),
       ],
     );
   }
