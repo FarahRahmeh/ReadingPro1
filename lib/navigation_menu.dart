@@ -2,6 +2,7 @@ import 'package:booktaste/admin/admin_home/admin_home_page.dart';
 import 'package:booktaste/user/user_home/user_home_page.dart';
 import 'package:booktaste/user/user_library/user_library.dart';
 import 'package:booktaste/user/user_profile/user_profile.dart';
+import 'package:booktaste/user/user_wishlist/favourite_page.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -45,7 +46,7 @@ class NavigationController extends GetxController {
   final screens = [
     const UserHomePage(),
     const UserLibrary(),
-    const AdminHomePage(),
+    const FavouritePage(),
     const UserProfile()
   ];
 }

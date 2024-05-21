@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import 'user/user_wishlist/favourite_page.dart';
+
 Future<void> main() async {
   ///Widgets Binding
   final WidgetsBinding widgetsBinding =
@@ -52,6 +54,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/navigation', page: () => const NavigationMenu()),
         GetPage(name: '/user_profile', page: () => const UserProfile()),
         GetPage(name: '/user_library', page: () => const UserLibrary()),
+        GetPage(name: '/favourite', page: () => const FavouritePage())
       ],
 
       ///! initial Route:
