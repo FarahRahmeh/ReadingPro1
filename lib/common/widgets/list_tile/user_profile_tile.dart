@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../utils/constans/colors.dart';
@@ -9,8 +8,9 @@ import '../images/circular_image.dart';
 class UserProfileTile extends StatelessWidget {
   const UserProfileTile({
     super.key,
+    this.onPressed,
   });
-
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -31,7 +31,7 @@ class UserProfileTile extends StatelessWidget {
             .apply(color: MyColors.white),
       ),
       trailing: IconButton(
-        onPressed: () {},
+        onPressed: onPressed,
         icon: const Icon(Iconsax.edit_2, color: MyColors.white),
       ),
     );

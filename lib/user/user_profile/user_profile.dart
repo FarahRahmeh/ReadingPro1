@@ -15,6 +15,7 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
+        showBackArrow: true,
         title: Text('Profile'),
       ),
       body: SingleChildScrollView(

@@ -8,9 +8,7 @@ import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../common/widgets/custom_shapes/Containers/primary_header_container.dart';
-import '../../common/widgets/images/circular_image.dart';
 import '../../common/widgets/list_tile/user_profile_tile.dart';
-import '../../utils/constans/images.dart';
 import '../../utils/constans/sizes.dart';
 
 class UserSettingsPage extends StatelessWidget {
@@ -39,7 +37,8 @@ class UserSettingsPage extends StatelessWidget {
                   ),
 
                   /// User Profile Card
-                  UserProfileTile(),
+                  UserProfileTile(
+                      onPressed: () => Get.to(() => const UserProfile())),
                   SizedBox(height: Sizes.spaceBtwSections),
                 ],
               ),
@@ -62,7 +61,7 @@ class UserSettingsPage extends StatelessWidget {
                     icon: Iconsax.profile_circle_copy,
                     title: 'Title',
                     subTitle: 'Add, remove,edit products ....',
-                    onTap: () => Get.to(() => const UserProfile()),
+                    onTap: () {},
                   ),
                   SettingsMenuTile(
                     icon: Iconsax.safe_home_copy,
@@ -80,13 +79,13 @@ class UserSettingsPage extends StatelessWidget {
                   SettingsMenuTile(
                     icon: Iconsax.star_1_copy,
                     title: 'Title',
-                    subTitle: 'lah blahhh blahhhhh',
+                    subTitle: 'blah blahhh blahhhhh',
                     onTap: () {},
                   ),
                   SettingsMenuTile(
                     icon: Iconsax.chart_1_copy,
                     title: 'Title',
-                    subTitle: 'lah blahhh blahhhhh',
+                    subTitle: 'blah blahhh blahhhhh',
                     onTap: () {},
                   ),
 
