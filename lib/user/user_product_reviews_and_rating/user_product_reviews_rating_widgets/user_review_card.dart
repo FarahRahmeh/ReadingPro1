@@ -61,7 +61,8 @@ class UserReviewCard extends StatelessWidget {
         SizedBox(
           height: Sizes.spaceBtwItems,
         ),
-        Text('Like ittttttt'),
+        Text(
+            'Like ittttttt'), //todo Note : if this long it will cause a pixels overflow
         //TODO   Readmore text  vid 24 time  16:30 -> 17:25
         SizedBox(
           height: Sizes.spaceBtwItems,
@@ -91,7 +92,8 @@ class UserReviewCard extends StatelessWidget {
                 SizedBox(
                   height: Sizes.spaceBtwItems,
                 ),
-                Text('Thank U !!!'),
+                Text(
+                    'Thank U !!!'), //todo Note : if this long it will cause a pixels overflow
                 //TODO   Readmore text  vid 24 time  16:30 -> 17:25
                 SizedBox(
                   height: Sizes.spaceBtwItems,
