@@ -6,8 +6,10 @@ import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:read_more_text/read_more_text.dart';
 // import 'package:readmore/readmore.dart';
 
+import '../../utils/constans/colors.dart';
 import 'user_product_details_widgets/bottom_add_to_cart.dart';
 import 'user_product_details_widgets/product_attributes.dart';
 import 'user_product_details_widgets/product_image_slider.dart';
@@ -66,26 +68,26 @@ class ProductDetailsPage extends StatelessWidget {
                   SizedBox(
                     height: Sizes.spaceBtwItems,
                   ),
-// ReadMoreText(
-//                     '.....................................................................................',
-//                     trimLines: 2,
-//                     trimMode: TrimMode.Line,
-//                     trimExpandedText: 'Less',
-//                     trimCollapsedText: 'Show more',
-//                     lessStyle: TextStyle(
-//                       fontSize: 14,
-//                       fontWeight: FontWeight.w800,
-//                     ),
-//                     moreStyle: TextStyle(
-//                       fontSize: 14,
-//                       fontWeight: FontWeight.w800,
-//                     ),
-//                   ),
+                  ReadMoreText(
+                    'This is a very long text to demo the usages of this package\n'
+                    'This is a very long text to demo the usages of this package'
+                    'This is a very long text to demo the usages of this package'
+                    'This is a very long text to demo the usages of this package',
+                    numLines: 4,
+                    readMoreText: 'Show more',
+                    readLessText: 'Less',
+                    readMoreIconColor: pinkish,
+                    readMoreTextStyle: TextStyle(color: brown),
+                    style: TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
+                  ),
                   SizedBox(
                     width: Sizes.spaceBtwSections,
                   ),
 
                   ///! -Reviews
+                  SizedBox(
+                    height: Sizes.spaceBtwItems,
+                  ),
                   Divider(),
                   SizedBox(
                     height: Sizes.spaceBtwItems,
@@ -95,6 +97,7 @@ class ProductDetailsPage extends StatelessWidget {
                     children: [
                       SectionHeading(
                         title: 'Reviews (222)',
+                        showActionButton: false,
                       ),
                       IconButton(
                         onPressed: () =>

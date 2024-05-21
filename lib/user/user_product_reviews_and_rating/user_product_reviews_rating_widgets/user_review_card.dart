@@ -4,7 +4,7 @@ import 'package:booktaste/utils/constans/colors.dart';
 import 'package:booktaste/utils/constans/images.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-
+import 'package:read_more_text/read_more_text.dart';
 import '../../../utils/constans/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
 
@@ -18,6 +18,7 @@ class UserReviewCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Divider(color: beige2),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -47,6 +48,7 @@ class UserReviewCard extends StatelessWidget {
 
         ///!Review
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             MyRatingBarIndicator(rating: 2, itemSize: 14),
             SizedBox(
@@ -61,9 +63,16 @@ class UserReviewCard extends StatelessWidget {
         SizedBox(
           height: Sizes.spaceBtwItems,
         ),
-        Text(
-            'Like ittttttt'), //todo Note : if this long it will cause a pixels overflow
-        //TODO   Readmore text  vid 24 time  16:30 -> 17:25
+        ReadMoreText(
+          'like it...........................................................................................................',
+          numLines: 1,
+          readMoreText: 'Show more',
+          readLessText: 'Less',
+          readMoreIconColor: pinkish,
+          readMoreTextStyle: TextStyle(color: brown),
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+        ),
+
         SizedBox(
           height: Sizes.spaceBtwItems,
         ),
@@ -92,16 +101,20 @@ class UserReviewCard extends StatelessWidget {
                 SizedBox(
                   height: Sizes.spaceBtwItems,
                 ),
-                Text(
-                    'Thank U !!!'), //todo Note : if this long it will cause a pixels overflow
-                //TODO   Readmore text  vid 24 time  16:30 -> 17:25
-                SizedBox(
-                  height: Sizes.spaceBtwItems,
+                ReadMoreText(
+                  'Thank u...........................................................................................................',
+                  numLines: 1,
+                  readMoreText: 'Show more',
+                  readLessText: 'Less',
+                  readMoreIconColor: pinkish,
+                  readMoreTextStyle: TextStyle(color: brown),
+                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 14),
                 ),
               ],
             ),
           ),
         ),
+
         SizedBox(
           height: Sizes.spaceBtwSections,
         )
