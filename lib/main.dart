@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
       ],
 
       ///! initial Route:
-      initialRoute: '/details',
+      initialRoute: '/navigation',
 
       ///Other
       debugShowCheckedModeBanner: false,

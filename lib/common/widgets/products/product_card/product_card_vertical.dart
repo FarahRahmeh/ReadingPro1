@@ -2,11 +2,13 @@ import 'package:booktaste/common/styles/shadows.dart';
 import 'package:booktaste/common/widgets/custom_shapes/Containers/rounded_container.dart';
 import 'package:booktaste/common/widgets/images/rounded_image.dart';
 import 'package:booktaste/common/widgets/texts/product_title.dart';
+import 'package:booktaste/user/user_product_details/product_details_page.dart';
 import 'package:booktaste/utils/constans/colors.dart';
 import 'package:booktaste/utils/constans/images.dart';
 import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../icons/circular_icon.dart';
@@ -23,7 +25,7 @@ class ProductCardVertical extends StatelessWidget {
     //~ Container with side padding ,color, edges, radius and shadow.
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailsPage()),
       child: Container(
         margin: EdgeInsets.all(4),
         width: 160,

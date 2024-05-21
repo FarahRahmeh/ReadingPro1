@@ -29,14 +29,18 @@ class ProductImageSlider extends StatelessWidget {
               height: 400,
               child: Padding(
                 padding: EdgeInsets.all(Sizes.productImageRadius * 2),
-                child: Center(child: Image(image: AssetImage(Images.cover5))),
+                child: Center(
+                  child: Image(
+                    image: AssetImage(Images.cover1),
+                  ),
+                ),
               ),
             ),
 
             ///! Image Slider
             Positioned(
               right: 0,
-              bottom: 30,
+              bottom: 40,
               left: Sizes.defaultSpace,
               child: SizedBox(
                 height: 80,
