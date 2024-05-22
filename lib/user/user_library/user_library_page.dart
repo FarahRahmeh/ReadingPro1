@@ -4,11 +4,13 @@ import 'package:booktaste/common/widgets/custom_shapes/Containers/search_contain
 import 'package:booktaste/common/widgets/layouts/grid_layout.dart';
 import 'package:booktaste/common/widgets/notification/notification_counter_icon.dart';
 import 'package:booktaste/common/widgets/texts/section_heading.dart';
+import 'package:booktaste/user/user_all_brands/all_brands_page.dart';
 import 'package:booktaste/user/user_library/user_library_widgets/category_tab.dart';
 import 'package:booktaste/utils/constans/colors.dart';
 import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../common/widgets/category/x_card.dart';
 
@@ -64,11 +66,11 @@ class UserLibrary extends StatelessWidget {
                       //! ---Featured brands
                       SectionHeading(
                         title: 'Featured ~~~',
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => AllBrandsPage()),
                       ),
                       const SizedBox(height: Sizes.spaceBtwItems / 1.5),
 
-                      MyGridView(
+                      MyGridLayout(
                           mainAxisExtent: 80,
                           itemCount: 4,
                           itemBuilder: (_, index) {

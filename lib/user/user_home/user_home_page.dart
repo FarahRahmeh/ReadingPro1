@@ -97,7 +97,7 @@ class UserHomePage extends StatelessWidget {
                 ),
 
                 ///!Popular products
-                MyGridView(
+                MyGridLayout(
                   itemCount: 4,
                   itemBuilder: (_, index) => ProductCardVertical(),
                 ),

@@ -35,7 +35,7 @@ class CategoryTab extends StatelessWidget {
                   height: Sizes.spaceBtwItems,
                 ),
                 //Books
-                MyGridView(
+                MyGridLayout(
                     itemCount: 4,
                     itemBuilder: (_, index) => ProductCardVertical()),
                 SizedBox(

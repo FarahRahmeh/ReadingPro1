@@ -8,7 +8,7 @@ import 'package:booktaste/common/features/on_boarding/onboarding_pages.dart';
 import 'package:booktaste/user/user_product_details/product_details_page.dart';
 import 'package:booktaste/navigation_menu.dart';
 import 'package:booktaste/user/user_home/user_home_page.dart';
-import 'package:booktaste/user/user_library/user_library.dart';
+import 'package:booktaste/user/user_library/user_library_page.dart';
 import 'package:booktaste/user/user_profile/user_profile.dart';
 import 'package:booktaste/user/user_setting/user_setting_page.dart';
 import 'package:booktaste/utils/theme/theme.dart';

@@ -1,4 +1,5 @@
 import 'package:booktaste/common/widgets/custom_shapes/Containers/rounded_container.dart';
+import 'package:booktaste/utils/constans/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/constans/enums.dart';
@@ -13,9 +14,11 @@ class XCard extends StatelessWidget {
     super.key,
     this.showBorder = true,
     this.onTap,
+    this.margin = 2,
   });
   final bool showBorder;
   final void Function()? onTap;
+  final double margin;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +26,9 @@ class XCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: RoundedContainer(
-        margin: const EdgeInsets.all(
-            2), //* ---Increases this value might make a pixels overflow
+        borderColor: dark ? lightBrown : gray,
+        margin: EdgeInsets.all(
+            margin), //* ---Increases this value might make a pixels overflow
         padding: const EdgeInsets.all(Sizes.sm),
         showBorder: showBorder,
         backgroundColor: Colors.transparent,
