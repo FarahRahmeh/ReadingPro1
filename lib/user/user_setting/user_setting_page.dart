@@ -1,6 +1,7 @@
 import 'package:booktaste/common/widgets/appbar/appbar.dart';
 import 'package:booktaste/common/widgets/list_tile/setting_menu_tile.dart';
 import 'package:booktaste/common/widgets/texts/section_heading.dart';
+import 'package:booktaste/user/user_address/address_page.dart';
 import 'package:booktaste/user/user_profile/user_profile.dart';
 import 'package:booktaste/utils/constans/colors.dart';
 import 'package:flutter/material.dart';
@@ -65,9 +66,9 @@ class UserSettingsPage extends StatelessWidget {
                   ),
                   SettingsMenuTile(
                     icon: Iconsax.safe_home_copy,
-                    title: 'Title',
+                    title: 'Addresses',
                     subTitle: 'blah blahhh blahhhhh',
-                    onTap: () {},
+                    onTap: () => Get.to(() => const AddressPage()),
                   ),
                   SettingsMenuTile(
                     icon: Iconsax.notification_copy,
