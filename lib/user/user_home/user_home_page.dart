@@ -1,16 +1,14 @@
-import 'package:booktaste/common/widgets/custom_shapes/Containers/circular_container.dart';
 import 'package:booktaste/common/widgets/custom_shapes/Containers/primary_header_container.dart';
 import 'package:booktaste/common/widgets/layouts/grid_layout.dart';
 import 'package:booktaste/common/widgets/products/product_card/product_card_vertical.dart';
-import 'package:booktaste/utils/constans/colors.dart';
+import 'package:booktaste/user/user_all_products/all_products_page.dart';
 import 'package:booktaste/utils/constans/images.dart';
 import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:booktaste/utils/constans/texts.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../common/widgets/custom_shapes/Containers/search_container.dart';
-import '../../common/widgets/images/rounded_image.dart';
 import '../../common/widgets/texts/section_heading.dart';
 import 'user_home_widgets/user_home_appbar.dart';
 import 'user_home_widgets/user_home_categories.dart';
@@ -90,9 +88,9 @@ class UserHomePage extends StatelessWidget {
                 ),
 
                 //! Heading
-                const SectionHeading(
+                SectionHeading(
                   title: 'Popular Books',
-                  
+                  onPressed: () => Get.to(() => AllProductsPage()),
                 ),
                 const SizedBox(
                   height: Sizes.spaceBtwItems,
