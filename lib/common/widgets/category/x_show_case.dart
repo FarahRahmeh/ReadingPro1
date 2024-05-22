@@ -14,7 +14,10 @@ class XShowcase extends StatelessWidget {
   final List<String> images;
   @override
   Widget build(BuildContext context) {
+    final dark = HelperFunctions.isDarkMode(context);
+
     return RoundedContainer(
+      backgroundColor: dark ? MyColors.black : MyColors.light,
       showBorder: true,
       borderColor: gray,
       padding: EdgeInsets.all(Sizes.md),

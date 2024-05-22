@@ -36,9 +36,8 @@ class SearchContainer extends StatelessWidget {
                   : MyColors.light
               : Colors.transparent,
           borderRadius: BorderRadius.circular(Sizes.cardRadiusLg),
-          border: showBorder
-              ? Border.all(color: dark ? MyColors.dark : gray)
-              : null,
+          border:
+              showBorder ? Border.all(color: dark ? lightBrown : gray) : null,
         ),
         child: Row(
           children: [
