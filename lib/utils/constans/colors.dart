@@ -72,7 +72,7 @@ class MyColors {
   static const Color primaryBackground = offWhite;
 
   ///Background Container Colors
-  static const Color lightContainer = offWhite;
+  static const Color lightContainer = Color(0xfff6f6f6);
   static Color darkContainer = offWhite.withOpacity(0.1);
 
   ///Button Colors
