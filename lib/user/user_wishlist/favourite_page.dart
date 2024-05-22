@@ -31,7 +31,7 @@ class FavouritePage extends StatelessWidget {
           padding: EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
             children: [
-              MyGridView(
+              MyGridLayout(
                   itemCount: 6,
                   itemBuilder: (_, index) => ProductCardVertical())
             ],

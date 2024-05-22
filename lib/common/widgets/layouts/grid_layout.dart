@@ -3,29 +3,35 @@ import 'package:flutter/material.dart';
 import '../../../utils/constans/sizes.dart';
 import '../products/product_card/product_card_vertical.dart';
 
-class MyGridView extends StatelessWidget {
-  const MyGridView({
+class MyGridLayout extends StatelessWidget {
+  const MyGridLayout({
     super.key,
     required this.itemCount,
     required this.itemBuilder,
     this.mainAxisExtent = 250, //288
+    this.crossAxisCount = 2,
+    this.mainAxisSpacing = 4,
+    this.padding = EdgeInsets.zero,
   });
 
   final int itemCount;
   final double? mainAxisExtent;
   final Widget? Function(BuildContext, int) itemBuilder;
+  final int crossAxisCount;
+  final double mainAxisSpacing;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: itemCount,
       shrinkWrap: true,
-      padding: EdgeInsets.zero,
+      padding: padding,
       // padding: EdgeInsets.all(Sizes.md),
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 4,
+        crossAxisCount: crossAxisCount,
+        mainAxisSpacing: mainAxisSpacing,
         childAspectRatio: Sizes.gridViewSpacing,
         mainAxisExtent: mainAxisExtent,
       ),
