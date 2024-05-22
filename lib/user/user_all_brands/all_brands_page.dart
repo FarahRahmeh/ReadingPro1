@@ -6,7 +6,6 @@ import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../common/widgets/products/sortable/sortable_products.dart';
 import '../../common/widgets/texts/section_heading.dart';
 
 class AllBrandsPage extends StatelessWidget {
@@ -33,7 +32,7 @@ class AllBrandsPage extends StatelessWidget {
                 itemCount: 10,
                 mainAxisExtent: 80,
                 itemBuilder: (context, index) => XCard(
-                  margin: 3,
+                  margin: 4,
                   showBorder: true,
                   onTap: () => Get.to(
                     () => BrandProducts(),
