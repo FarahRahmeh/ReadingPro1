@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 
 import '../constans/colors.dart';
 import '../helpers/helper_functions.dart';
-import 'animation_loader.dart';
+import '../../common/widgets/loaders/animation_loader.dart';
+import '../../common/widgets/loaders/circular_loader.dart';
 
 class FullScreenLoader {
   // Open a full-screen loading dialog with a given text and animation.
@@ -17,9 +18,11 @@ class FullScreenLoader {
     showDialog(
       context: Get.overlayContext!,
       barrierDismissible: false,
-      builder: (c) => Scaffold(
-        //canPop: false,
-        body: Container(
+      builder: (_) => WillPopScope(
+        onWillPop: () async => false,
+        // Scaffold(
+        //   //canPop: false,
+        child: Container(
           color: HelperFunctions.isDarkMode(Get.context!) ? darkBrown : beige,
           width: double.infinity,
           height: double.infinity,
@@ -31,6 +34,15 @@ class FullScreenLoader {
           ),
         ),
       ),
+    );
+  }
+
+  static void popUpCircular() {
+    Get.defaultDialog(
+      title: '',
+      onWillPop: () async => false,
+      content: const CircularLoader(),
+      backgroundColor: Colors.transparent,
     );
   }
 

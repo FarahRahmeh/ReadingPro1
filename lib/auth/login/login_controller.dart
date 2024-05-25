@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import '../../utils/loaders/loaders.dart';
+import '../../utils/popups/loaders.dart';
 import '../../data/services/network_manager.dart';
 import '../../data/services/role.manager.dart';
 import '../../data/services/token_manager.dart';
