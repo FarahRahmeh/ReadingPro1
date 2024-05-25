@@ -1,7 +1,5 @@
-import 'package:booktaste/auth/password_configuration/forget_password_page.dart';
-import 'package:booktaste/auth/success_screen/success_scree.dart';
-import 'package:booktaste/auth/verify_email/verify_email_page.dart';
-import 'package:booktaste/navigation_menu.dart';
+import 'package:booktaste/admin/navigation/Admin_navigation_menu.dart';
+import 'package:booktaste/user/navigation/user_navigation_menu.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -18,11 +16,11 @@ Future<void> saveRole(String role) async {
 void navigateBasedOnRole() async {
   final role = await getRole(); // Retrieve the role
   if (role == 'master_admin' || role == 'admin') {
-    Get.offAll(() => const NavigationMenu());
+    Get.offAll(() => const UserNavigationMenu());
 
     //todo Change the route name
   } else if (role == 'user') {
-    Get.offAll(() => const NavigationMenu());
+    Get.offAll(() => const AdminNavigationMenu());
 
     //todo Change the route name
   }

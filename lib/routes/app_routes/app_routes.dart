@@ -4,7 +4,7 @@ import 'package:booktaste/auth/login/login_page.dart';
 import 'package:booktaste/auth/register/register_page.dart';
 import 'package:booktaste/auth/verify_email/verify_email_page.dart';
 import 'package:booktaste/common/features/on_boarding/onboarding_pages.dart';
-import 'package:booktaste/navigation_menu.dart';
+import 'package:booktaste/user/navigation/user_navigation_menu.dart';
 import 'package:booktaste/user/user_home/user_home_page.dart';
 import 'package:booktaste/user/user_library/user_library_page.dart';
 import 'package:booktaste/user/user_product_details/product_details_page.dart';
@@ -29,7 +29,8 @@ class AppRoutes {
         page: () => const ConfirmationCodePage()),
     //! User Routes
     GetPage(name: UserRoutes.home, page: () => const UserHomePage()),
-    GetPage(name: UserRoutes.navigation, page: () => const NavigationMenu()),
+    GetPage(
+        name: UserRoutes.navigation, page: () => const UserNavigationMenu()),
     GetPage(name: UserRoutes.profile, page: () => const UserProfile()),
     GetPage(name: UserRoutes.library, page: () => const UserLibrary()),
     GetPage(name: UserRoutes.favourite, page: () => const FavouritePage()),
