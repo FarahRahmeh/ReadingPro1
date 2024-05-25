@@ -1,6 +1,6 @@
 import 'package:booktaste/auth/login/login_controller.dart';
 import 'package:booktaste/auth/verify_email/verify_email_page.dart';
-import 'package:booktaste/navigation_menu.dart';
+import 'package:booktaste/user/navigation/user_navigation_menu.dart';
 import 'package:booktaste/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
