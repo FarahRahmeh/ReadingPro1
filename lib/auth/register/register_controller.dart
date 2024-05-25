@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:booktaste/auth/login/login_page.dart';
-import 'package:booktaste/utils/loaders/loaders.dart';
+import 'package:booktaste/utils/popups/loaders.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
