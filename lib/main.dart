@@ -1,22 +1,11 @@
-import 'package:booktaste/admin/admin_home/admin_home_page.dart';
-import 'package:booktaste/auth/code_confirmation/code_confirmation_page.dart';
-import 'package:booktaste/auth/login/login_page.dart';
-import 'package:booktaste/auth/register/register_page.dart';
-import 'package:booktaste/auth/verify_email/verify_email_page.dart';
 import 'package:booktaste/binding/general_bindings.dart';
-import 'package:booktaste/common/features/on_boarding/onboarding_pages.dart';
-import 'package:booktaste/user/user_product_details/product_details_page.dart';
-import 'package:booktaste/navigation_menu.dart';
-import 'package:booktaste/user/user_home/user_home_page.dart';
-import 'package:booktaste/user/user_library/user_library_page.dart';
-import 'package:booktaste/user/user_profile/user_profile.dart';
-import 'package:booktaste/user/user_setting/user_setting_page.dart';
+import 'package:booktaste/routes/user_admin_routes/user_routes.dart';
 import 'package:booktaste/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'user/user_wishlist/favourite_page.dart';
+import 'routes/app_routes/app_routes.dart';
 
 Future<void> main() async {
   ///Widgets Binding
@@ -43,26 +32,10 @@ class MyApp extends StatelessWidget {
       initialBinding: GeneralBindings(),
 
       ///!Routes
-      getPages: [
-        GetPage(name: '/onBoarding', page: () => const OnBoardingPages()),
-        GetPage(name: '/login', page: () => const LoginPage()),
-        GetPage(name: '/register', page: () => const RegisterPage()),
-        GetPage(name: '/email_verify', page: () => const VerifyEmailPage()),
-        GetPage(
-            name: '/confirm_email_code',
-            page: () => const ConfirmationCodePage()),
-        GetPage(name: '/user_home', page: () => const UserHomePage()),
-        GetPage(name: '/admin_home', page: () => const AdminHomePage()),
-        GetPage(name: '/navigation', page: () => const NavigationMenu()),
-        GetPage(name: '/user_profile', page: () => const UserProfile()),
-        GetPage(name: '/user_library', page: () => const UserLibrary()),
-        GetPage(name: '/favourite', page: () => const FavouritePage()),
-        GetPage(name: '/user_settings', page: () => const UserSettingsPage()),
-        GetPage(name: '/details', page: () => const ProductDetailsPage()),
-      ],
+      getPages: AppRoutes.pages,
 
       ///! initial Route:
-      initialRoute: '/navigation',
+      initialRoute: UserRoutes.navigation,
 
       ///Other
       debugShowCheckedModeBanner: false,

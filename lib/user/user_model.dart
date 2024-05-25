@@ -1,5 +1,6 @@
 //! Unfinished
 // class UserModel {
+  //~ final variable = do NOT want to update it
 //   final String id;
 //   final String email;
 //   final String role;
