@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       getPages: AppRoutes.pages,
 
       ///! initial Route:
-      initialRoute: UserRoutes.navigation,
+      initialRoute: UserAdminRoues.confirmEmailCode,
 
       ///Other
       debugShowCheckedModeBanner: false,
