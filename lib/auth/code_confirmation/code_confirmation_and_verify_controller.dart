@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../../data/repositories/auth_repository.dart';
-import '../../utils/loaders/loaders.dart';
+import '../../utils/popups/loaders.dart';
 import '../register/register_page.dart';
 
 class ConfirmationController extends GetxController {
