@@ -2,6 +2,7 @@ import 'package:booktaste/common/styles/shadows.dart';
 import 'package:booktaste/common/widgets/custom_shapes/Containers/rounded_container.dart';
 import 'package:booktaste/common/widgets/images/rounded_image.dart';
 import 'package:booktaste/common/widgets/texts/product_title.dart';
+import 'package:booktaste/user/user_all_books/all_books_model.dart';
 import 'package:booktaste/user/user_product_details/product_details_page.dart';
 import 'package:booktaste/utils/constans/colors.dart';
 import 'package:booktaste/utils/constans/images.dart';
@@ -16,7 +17,10 @@ import '../../texts/product_price.dart';
 import '../../texts/title_with_icon.dart';
 
 class ProductCardVertical extends StatelessWidget {
-  const ProductCardVertical({super.key});
+   const ProductCardVertical({super.key, required this.allbooks});
+
+  final AllBooks allbooks;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +54,7 @@ class ProductCardVertical extends StatelessWidget {
                 children: [
                   //! Thumbnail Image
                   RoundedImage(
-                    imageUrl: Images.cover1,
+                    imageUrl: allbooks.cover,
                     // applyImageRadius: true,
                   ),
                   //!Sale Tag
@@ -93,13 +97,13 @@ class ProductCardVertical extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ProductTitleText(
-                    title: 'Book Title Here',
+                    title: "${allbooks.name}",
                     smallSize: true,
                   ),
                   SizedBox(
                     height: Sizes.spaceBtwItems / 2,
                   ),
-                  TextTitleWithIcon(title: 'Author'),
+                  TextTitleWithIcon(title: "${allbooks.writer}"),
                 ],
               ),
             ),
@@ -108,11 +112,11 @@ class ProductCardVertical extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Padding(
+                 Padding(
                   padding: EdgeInsets.only(left: Sizes.sm),
-                  child: ProductPriceText(price: '30.99'),
+                  child: ProductPriceText(price: allbooks.stars.toString(),)
                 ),
-                //! Add to cart 
+                //! Add to cart
                 Container(
                   decoration: const BoxDecoration(
                     color: lightBrown,

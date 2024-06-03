@@ -8,11 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../user_all_books/all_books_controller.dart';
+
 class FavouritePage extends StatelessWidget {
   const FavouritePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final allbookscontroller = Get.put(AllBooksController());
     return Scaffold(
       appBar: MyAppBar(
         title: Text(
@@ -22,7 +25,7 @@ class FavouritePage extends StatelessWidget {
         actions: [
           CircularIcon(
             icon: Iconsax.add,
-            onPressed: () => Get.to(const UserHomePage()),
+            onPressed: () => Get.to(UserHomePage()),
           ),
         ],
       ),
@@ -31,9 +34,13 @@ class FavouritePage extends StatelessWidget {
           padding: EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
             children: [
-              MyGridLayout(
-                  itemCount: 6,
-                  itemBuilder: (_, index) => ProductCardVertical())
+              Obx(() {
+                return MyGridLayout(
+                    itemCount: allbookscontroller.booksList.length,
+                    itemBuilder: (_, index) => ProductCardVertical(
+                          allbooks: allbookscontroller.booksList[index],
+                        ));
+              })
             ],
           ),
         ),

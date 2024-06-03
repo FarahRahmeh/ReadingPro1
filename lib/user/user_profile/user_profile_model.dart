@@ -33,18 +33,18 @@ class UserProfileModel {
     }
   }
 
-  int? get profileId => _profileId;
-  set profileId(int? profileId) => _profileId = profileId;
-  String? get name => _name;
-  set name(String? name) => _name = name;
-  String? get email => _email;
-  set email(String? email) => _email = email;
-  String? get photo => _photo;
-  set photo(String? photo) => _photo = photo;
-  int? get myPoints => _myPoints;
-  set myPoints(int? myPoints) => _myPoints = myPoints;
-  List<FavGenres>? get favGenres => _favGenres;
-  set favGenres(List<FavGenres>? favGenres) => _favGenres = favGenres;
+  // int? get profileId => _profileId;
+  // set profileId(int? profileId) => _profileId = profileId;
+  // String? get name => _name;
+  // set name(String? name) => _name = name;
+  // String? get email => _email;
+  // set email(String? email) => _email = email;
+  // String? get photo => _photo;
+  // set photo(String? photo) => _photo = photo;
+  // int? get myPoints => _myPoints;
+  // set myPoints(int? myPoints) => _myPoints = myPoints;
+  // List<FavGenres>? get favGenres => _favGenres;
+  // set favGenres(List<FavGenres>? favGenres) => _favGenres = favGenres;
 
   UserProfileModel.fromJson(Map<String, dynamic> json) {
     _profileId = json['profile_id'];
@@ -76,9 +76,9 @@ class UserProfileModel {
 
 class FavGenres {
   String? _genre;
-  Null? _lastInteractWithAt;
+  DateTime? _lastInteractWithAt;
 
-  FavGenres({String? genre, Null? lastInteractWithAt}) {
+  FavGenres({String? genre, DateTime? lastInteractWithAt}) {
     if (genre != null) {
       _genre = genre;
     }
@@ -89,8 +89,8 @@ class FavGenres {
 
   String? get genre => _genre;
   set genre(String? genre) => _genre = genre;
-  Null? get lastInteractWithAt => _lastInteractWithAt;
-  set lastInteractWithAt(Null? lastInteractWithAt) =>
+  DateTime? get lastInteractWithAt => _lastInteractWithAt;
+  set lastInteractWithAt(DateTime? lastInteractWithAt) =>
       _lastInteractWithAt = lastInteractWithAt;
 
   FavGenres.fromJson(Map<String, dynamic> json) {

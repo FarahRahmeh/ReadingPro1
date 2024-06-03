@@ -43,7 +43,7 @@ class UserNavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
-    const UserHomePage(),
+     UserHomePage(),
     const UserLibrary(),
     const FavouritePage(),
     // const UserProfile(),
