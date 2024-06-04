@@ -2,6 +2,7 @@ import 'package:booktaste/user/user_home/user_home_page.dart';
 import 'package:booktaste/user/user_library/user_library_page.dart';
 import 'package:booktaste/user/user_setting/user_setting_page.dart';
 import 'package:booktaste/user/user_wishlist/favourite_page.dart';
+import 'package:booktaste/utils/constans/colors.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,7 @@ class UserNavigationMenu extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
+          indicatorColor: beige2,
           height: 80,
           elevation: 0,
           selectedIndex: controller.selectedIndex.value,

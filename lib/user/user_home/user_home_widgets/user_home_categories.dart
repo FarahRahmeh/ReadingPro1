@@ -1,3 +1,4 @@
+import 'package:booktaste/common/widgets/shimmers/category_shimmer.dart';
 import 'package:booktaste/user/user_sub_category/sub_categories_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,21 +13,27 @@ class UserHomeCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 80,
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: 6,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (_, index) {
-          return VerticalImageWithText(
-            image: Images.book,
-            title: "All",
-            onTap: () => Get.to(() => SubCategoriesPage()),
-            // textColor: , //~------------same color
-          );
-        },
-      ),
-    );
+   
+
+    return Obx(() {
+      
+      return SizedBox(
+        height: 80,
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: 6,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (_, index) {
+            return VerticalImageWithText(
+              image: Images.book,
+              title: "All",
+              onTap: () => Get.to(() => SubCategoriesPage()),
+              // textColor: , //~------------same color
+            );
+          },
+        ),
+      );
+    
+    });
   }
 }

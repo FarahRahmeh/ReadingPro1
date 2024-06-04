@@ -1,4 +1,4 @@
-import 'package:booktaste/admin/navigation/Admin_navigation_menu.dart';
+import 'package:booktaste/admin/navigation/admin_navigation_menu.dart';
 import 'package:booktaste/user/navigation/user_navigation_menu.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

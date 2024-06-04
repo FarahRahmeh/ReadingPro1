@@ -1,9 +1,14 @@
-import 'package:booktaste/admin/admin_home/admin_home_page.dart';
+import 'package:booktaste/admin/home/admin_home_page.dart';
+import 'package:booktaste/admin/library/library_page.dart';
+import 'package:booktaste/admin/navigation/admin_navigation_menu.dart';
+import 'package:booktaste/admin/profile/admin_profile.dart';
+import 'package:booktaste/admin/settings/admin_setting_page.dart';
 import 'package:booktaste/auth/code_confirmation/code_confirmation_page.dart';
 import 'package:booktaste/auth/login/login_page.dart';
 import 'package:booktaste/auth/register/register_page.dart';
 import 'package:booktaste/auth/verify_email/verify_email_page.dart';
 import 'package:booktaste/common/features/on_boarding/onboarding_pages.dart';
+import 'package:booktaste/models/book_model.dart';
 import 'package:booktaste/user/navigation/user_navigation_menu.dart';
 import 'package:booktaste/user/user_home/user_home_page.dart';
 import 'package:booktaste/user/user_library/user_library_page.dart';
@@ -13,6 +18,7 @@ import 'package:booktaste/user/user_setting/user_setting_page.dart';
 import 'package:booktaste/user/user_wishlist/favourite_page.dart';
 import 'package:get/get.dart';
 
+import '../../admin/insignts/admin_insignts_page.dart';
 import '../user_admin_routes/user_routes.dart';
 
 class AppRoutes {
@@ -39,5 +45,11 @@ class AppRoutes {
 
     //! Admin Routes
     GetPage(name: AdminRoutes.home, page: () => const AdminHomePage()),
+    GetPage(name: AdminRoutes.insignts, page: () => const InsigntsPage()),
+    GetPage(
+        name: AdminRoutes.navigation, page: () => const AdminNavigationMenu()),
+    GetPage(name: AdminRoutes.library, page: () => const AdminLibraryPage()),
+    GetPage(name: AdminRoutes.profile, page: () => const AdminProfilePage()),
+    GetPage(name: AdminRoutes.settings, page: () => const AdminSettingsPage()),
   ];
 }

@@ -1,11 +1,17 @@
-import 'package:booktaste/admin/admin_home/admin_home_page.dart';
+import 'package:booktaste/admin/home/admin_home_page.dart';
+import 'package:booktaste/admin/library/library_page.dart';
+import 'package:booktaste/admin/profile/admin_profile.dart';
+import 'package:booktaste/admin/settings/admin_setting_page.dart';
 import 'package:booktaste/user/user_library/user_library_page.dart';
 import 'package:booktaste/user/user_setting/user_setting_page.dart';
 import 'package:booktaste/user/user_wishlist/favourite_page.dart';
+import 'package:booktaste/utils/constans/colors.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
+
+import '../insignts/admin_insignts_page.dart';
 
 class AdminNavigationMenu extends StatelessWidget {
   const AdminNavigationMenu({super.key});
@@ -13,11 +19,12 @@ class AdminNavigationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
-    final darkMode = HelperFunctions.isDarkMode(context);
+    final dark = HelperFunctions.isDarkMode(context);
 
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
+          indicatorColor: beige2,
           height: 80,
           elevation: 0,
           selectedIndex: controller.selectedIndex.value,
@@ -28,10 +35,12 @@ class AdminNavigationMenu extends StatelessWidget {
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
           destinations: const [
-            NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Library'),
-            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist'),
-            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+            NavigationDestination(icon: Icon(Iconsax.home_1), label: 'Home'),
+            NavigationDestination(
+                icon: Icon(Iconsax.book_square), label: 'Library'),
+            NavigationDestination(icon: Icon(Iconsax.layer), label: 'Insignts'),
+            NavigationDestination(
+                icon: Icon(Iconsax.setting_2), label: 'Settings'),
           ],
         ),
       ),
@@ -44,10 +53,8 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
     const AdminHomePage(),
-    const UserLibrary(),
-    const FavouritePage(),
-    // const UserProfile(),
-    const UserSettingsPage(),
+    const AdminLibraryPage(),
+    const InsigntsPage(),
+    const AdminSettingsPage(),
   ];
 }
-//comment to test

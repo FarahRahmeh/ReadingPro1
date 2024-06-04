@@ -19,17 +19,20 @@ class UserHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+  
     return Scaffold(
         body: SingleChildScrollView(
       ///!Heading
       child: Column(
         children: [
           PrimaryHeaderContainer(
-            height: 400,
+            height: 380,
             child: Column(
               children: [
                 ///!Appbar
                 UserHomePageAppbar(),
+
                 SizedBox(
                   height: Sizes.spaceBtwSections,
                 ),

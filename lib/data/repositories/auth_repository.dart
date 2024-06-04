@@ -1,26 +1,50 @@
 import 'dart:convert';
-import 'dart:ffi';
-import 'package:booktaste/auth/login/login_page.dart';
-import 'package:booktaste/common/features/on_boarding/onboarding_pages.dart';
-
-import 'package:booktaste/utils/http/http_client.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 
+import '../../models/user_model.dart';
 import '../../utils/constans/api_constans.dart';
 
 class AuthRepository extends GetxController {
+  //final AuthService _authService = Get.find<AuthService>();
+
   ///static AuthRepository get instance => Get.find();
 
   ///Variables
   final deviceStorage = GetStorage();
+  // final Rxn<User> _user = Rxn<User>();
+  // User? get currentUser => _user.value;
 
   // This function will be called when the app launches
   // @override
   // void onReady() {
   //   super.onReady();
   //   screenRedirect();
+  // }
+
+  // void screenRedirect() async {
+  //   final user = _authService.currentUser;
+  //   if (user != null) {
+
+  //     //todo Token not null
+  //   // If the user's email is verified, navigate to the main navigation
+  //   if (user.emailVerified) {
+    //await LocalStorage.init(user.id);
+  //     Get.offAll(() => const MainNavigation());
+  //   } else {
+  //     // If the user's email is not verified, navigate to VerifyEmailScreen
+  //     Get.offAll(() => const VerifyEmailScreen());
+  //   }
+  //   } else {
+  //   //   // Local Storage
+  //
+//deviceStorage.writeIfNull('IsFirstTime',true);
+  //     // Check if it's the first time launching the app
+  //     deviceStorage.read('IsFirstTime')!= true ? Get.offAll(login): Get.offAll onboading
+  //       // Onboarding Screen
+  //
+  //   }
   // }
 
   // Determine the relevant screen and redirect accordingly

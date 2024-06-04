@@ -10,6 +10,7 @@ class MyRatingBarIndicator extends StatelessWidget {
   });
   final double rating;
   final double itemSize;
+  
   @override
   Widget build(BuildContext context) {
     return RatingBarIndicator(

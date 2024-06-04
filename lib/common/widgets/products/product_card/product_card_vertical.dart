@@ -2,6 +2,7 @@ import 'package:booktaste/common/styles/shadows.dart';
 import 'package:booktaste/common/widgets/custom_shapes/Containers/rounded_container.dart';
 import 'package:booktaste/common/widgets/images/rounded_image.dart';
 import 'package:booktaste/common/widgets/texts/product_title.dart';
+import 'package:booktaste/models/book_model.dart';
 import 'package:booktaste/user/user_product_details/product_details_page.dart';
 import 'package:booktaste/utils/constans/colors.dart';
 import 'package:booktaste/utils/constans/images.dart';
@@ -12,12 +13,12 @@ import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../icons/circular_icon.dart';
+import '../../images/book_cover.dart';
 import '../../texts/product_price.dart';
 import '../../texts/title_with_icon.dart';
 
 class ProductCardVertical extends StatelessWidget {
   const ProductCardVertical({super.key});
-
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
@@ -77,7 +78,7 @@ class ProductCardVertical extends StatelessWidget {
                     top: 0,
                     right: -30,
                     child: CircularIcon(
-                      backgroundColor: beige2.withOpacity(0.8),
+                      backgroundColor: beige2.withOpacity(0.7),
                       icon: Iconsax.heart,
                       color: pinkish,
                     ),
@@ -112,7 +113,7 @@ class ProductCardVertical extends StatelessWidget {
                   padding: EdgeInsets.only(left: Sizes.sm),
                   child: ProductPriceText(price: '30.99'),
                 ),
-                //! Add to cart 
+                //! Add to cart
                 Container(
                   decoration: const BoxDecoration(
                     color: lightBrown,
