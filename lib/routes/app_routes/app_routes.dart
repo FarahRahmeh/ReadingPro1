@@ -34,7 +34,7 @@ class AppRoutes {
         name: UserAdminRoues.confirmEmailCode,
         page: () => const ConfirmationCodePage()),
     //! User Routes
-    GetPage(name: UserRoutes.home, page: () => const UserHomePage()),
+    GetPage(name: UserRoutes.home, page: () =>  UserHomePage()),
     GetPage(
         name: UserRoutes.navigation, page: () => const UserNavigationMenu()),
     GetPage(name: UserRoutes.profile, page: () => const UserProfile()),

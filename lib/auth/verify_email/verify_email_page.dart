@@ -16,6 +16,7 @@ class VerifyEmailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(ConfirmationController());
+    
 
     return Scaffold(
       // appBar: AppBar(
@@ -74,7 +75,9 @@ class VerifyEmailPage extends StatelessWidget {
                     SizedBox(
                       width: double.infinity,
                       child: OutlinedButton(
-                          onPressed: () {}, child: const Text('Resend Email')),
+                          onPressed: () {
+                            controller.verifyEmail();
+                          }, child: const Text('Resend Email')),
                     ),
                   ],
                 ),

@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../user_all_books/all_books_controller.dart';
+
 class FavouritePage extends StatelessWidget {
   const FavouritePage({
     super.key,
@@ -18,7 +20,7 @@ class FavouritePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final FavController ctrl = Get.find<FavController>();
+    final allbookscontroller = Get.put(AllBooksController());
     return Scaffold(
       appBar: MyAppBar(
         title: Text(
@@ -28,7 +30,7 @@ class FavouritePage extends StatelessWidget {
         actions: [
           CircularIcon(
             icon: Iconsax.add,
-            onPressed: () => Get.to(const UserHomePage()),
+            onPressed: () => Get.to(UserHomePage()),
           ),
         ],
       ),
@@ -37,20 +39,13 @@ class FavouritePage extends StatelessWidget {
           padding: EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
             children: [
-              MyGridLayout(
-                crossAxisCount: 1,
-                itemCount: ctrl.numOfItems.value,
-                // itemBuilder: (_, index) {
-                //   return ProductCardVertical();
-                // },
-                itemBuilder: (context, index) {
-                  final book = ctrl.favList[index];
-                  return ProductCardHorizontal(
-                    book: book,
-                    //onpressed ctrl.remove(book)
-                  );
-                },
-              ),
+              Obx(() {
+                return MyGridLayout(
+                    itemCount: allbookscontroller.booksList.length,
+                    itemBuilder: (_, index) => ProductCardVertical(
+                          allbooks: allbookscontroller.booksList[index],
+                        ));
+              })
             ],
           ),
         ),
