@@ -1,16 +1,15 @@
-import 'package:booktaste/admin/admin_home/admin_home_page.dart';
 import 'package:booktaste/user/user_home/user_home_page.dart';
 import 'package:booktaste/user/user_library/user_library_page.dart';
-import 'package:booktaste/user/user_profile/user_profile.dart';
 import 'package:booktaste/user/user_setting/user_setting_page.dart';
 import 'package:booktaste/user/user_wishlist/favourite_page.dart';
+import 'package:booktaste/utils/constans/colors.dart';
 import 'package:booktaste/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-class NavigationMenu extends StatelessWidget {
-  const NavigationMenu({Key? key});
+class UserNavigationMenu extends StatelessWidget {
+  const UserNavigationMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +19,7 @@ class NavigationMenu extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
+          indicatorColor: beige2,
           height: 80,
           elevation: 0,
           selectedIndex: controller.selectedIndex.value,
@@ -45,7 +45,7 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
-    const UserHomePage(),
+     UserHomePage(),
     const UserLibrary(),
     const FavouritePage(),
     // const UserProfile(),

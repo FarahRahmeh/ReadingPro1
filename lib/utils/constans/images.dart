@@ -24,4 +24,12 @@ class Images {
   static const String cover6 = "assets/images/cover6.jpg";
   static const String cover7 = "assets/images/cover7.jpg";
   static const String cover8 = "assets/images/cover8.jpg";
+
+  //Animations
+  static const String defaultLoaderAnimation =
+      "assets/images/animations/default-loader-animation.json";
+
+  //Profile
+  static const String profileLight = "assets/images/profile.gif";
+  static const String profileDark = "assets/images/profile_dark.gif";
 }

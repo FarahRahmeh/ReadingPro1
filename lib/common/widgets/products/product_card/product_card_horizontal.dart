@@ -4,17 +4,21 @@ import 'package:booktaste/common/widgets/texts/product_title.dart';
 import 'package:booktaste/common/widgets/texts/x_title_text.dart';
 import 'package:booktaste/utils/constans/images.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../../../../models/book_model.dart';
 import '../../../../utils/constans/colors.dart';
 import '../../../../utils/constans/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../../styles/shadows.dart';
 import '../../icons/circular_icon.dart';
+import '../../icons/favourite_icon.dart';
 import '../../texts/product_price.dart';
 
 class ProductCardHorizontal extends StatelessWidget {
-  const ProductCardHorizontal({super.key});
+  const ProductCardHorizontal({super.key, required this.book});
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -71,11 +75,7 @@ class ProductCardHorizontal extends StatelessWidget {
                   //*to control the position
                   top: 0,
                   right: 0,
-                  child: CircularIcon(
-                    backgroundColor: beige2.withOpacity(0.7),
-                    icon: Iconsax.heart,
-                    color: pinkish,
-                  ),
+                  child: FavouriteIcon(),
                 ),
               ],
             ),
@@ -91,7 +91,8 @@ class ProductCardHorizontal extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ProductTitleText(
-                        title: 'Harry Potter and the Chamber of Secrets',
+                        title: book.name!,
+                        //title: 'Harry Potter and the Chamber of Secrets',
                         smallSize: true,
                       ),
                       SizedBox(

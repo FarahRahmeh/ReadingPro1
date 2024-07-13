@@ -14,12 +14,20 @@ Future<void> main() async {
 
   ///Getx local strorage
   await GetStorage.init();
+  // await initServices();
 
   ///await splash until other items load
   //FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   ///laod all the material design/ themes/ localizaations/ binding
   runApp(const MyApp());
 }
+
+// Future<void> initServices() async {
+//   Get.put(AuthService());
+//   final AuthService _authService = Get.find<AuthService>();
+
+//   print(_authService.currentUser.toString());
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

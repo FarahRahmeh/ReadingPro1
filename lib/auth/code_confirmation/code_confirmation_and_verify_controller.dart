@@ -6,13 +6,16 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../../data/repositories/auth_repository.dart';
-import '../../utils/loaders/loaders.dart';
+import '../../utils/popups/loaders.dart';
 import '../register/register_page.dart';
 
 class ConfirmationController extends GetxController {
   final emailController = TextEditingController();
   // final emailController1 = TextEditingController();
   final codeController = TextEditingController();
+  //  final List<TextEditingController> controllers = List.generate(5, (_) => TextEditingController());
+   
+  
   final localStorage = GetStorage();
   final _authRepository = Get.put(AuthRepository());
   GlobalKey<FormState> verifyKey = GlobalKey<FormState>();
@@ -25,6 +28,7 @@ class ConfirmationController extends GetxController {
       }
 
       final response = await _authRepository.codeConfirmation(
+        
           emailController.text.trim(), codeController.text.trim());
       print(response.body.toString());
 
@@ -34,9 +38,10 @@ class ConfirmationController extends GetxController {
         Loaders.successSnackBar(title: 'On Snap', message: userData);
         Get.to(() => const RegisterPage());
       } else {
+        final message = userData['message'];
         //todo Need to change status code
 
-        Loaders.errorSnackBAr(title: 'faild: ', message: userData);
+        Loaders.errorSnackBAr(title: 'faild: ', message: message);
       }
     } catch (e) {
       Loaders.errorSnackBAr(title: 'On Snap', message: e.toString());
@@ -54,6 +59,7 @@ class ConfirmationController extends GetxController {
       print(response.body.toString());
 
       final userData = jsonDecode(response.body); // to string
+
       if (response.statusCode == 200) {
         Loaders.successSnackBar(title: 'On Snap', message: 'successfully');
 

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../common/widgets/appbar/appbar.dart';
 import '../../../common/widgets/notification/notification_counter_icon.dart';
 import '../../../utils/constans/colors.dart';
 import '../../../utils/constans/texts.dart';
+import '../../user_sub_category/sub_categories_page.dart';
 
 class UserHomePageAppbar extends StatelessWidget {
   const UserHomePageAppbar({
@@ -34,7 +36,7 @@ class UserHomePageAppbar extends StatelessWidget {
       ),
       actions: [
         NotificationCounterIcon(
-          onPressed: () {},
+          onPressed: () => Get.to(() => SubCategoriesPage()),
           iconColor: brown,
         ),
       ],

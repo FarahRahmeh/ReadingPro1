@@ -1,6 +1,8 @@
 import 'package:booktaste/common/widgets/appbar/appbar.dart';
 import 'package:booktaste/common/widgets/images/rounded_image.dart';
+import 'package:booktaste/common/widgets/products/product_card/product_card_vertical.dart';
 import 'package:booktaste/common/widgets/texts/section_heading.dart';
+import 'package:booktaste/models/book_model.dart';
 import 'package:booktaste/utils/constans/images.dart';
 import 'package:booktaste/utils/constans/sizes.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,7 @@ class SubCategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final BookModel book=BookModel(name: 'bookTitle',author: 'authorName',cover: Images.cover3) ;
     return Scaffold(
       appBar: MyAppBar(
         title: Text('Fantasy'),
@@ -45,13 +48,15 @@ class SubCategoriesPage extends StatelessWidget {
                   SizedBox(
                     height: 120,
                     child: ListView.separated(
-                        itemCount: 5,
-                        scrollDirection: Axis.horizontal,
-                        separatorBuilder: (context, index) => SizedBox(
-                              width: Sizes.spaceBtwItems,
-                            ),
-                        itemBuilder: (context, index) =>
-                            ProductCardHorizontal()),
+                      itemCount: 5,
+                      scrollDirection: Axis.horizontal,
+                      separatorBuilder: (context, index) => SizedBox(
+                        width: Sizes.spaceBtwItems,
+                      ),
+                      itemBuilder: (context, index) =>
+                      
+                          ProductCardHorizontal(book: book),
+                    ),
                   ),
                 ],
               ),

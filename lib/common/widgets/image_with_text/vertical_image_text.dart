@@ -1,19 +1,26 @@
+import 'package:booktaste/user/user_home/user_home_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../user/user_home/user_home_controller.dart';
 import '../../../utils/constans/colors.dart';
 import '../../../utils/constans/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
 
 class VerticalImageWithText extends StatelessWidget {
-  const VerticalImageWithText({
-    super.key,
-    required this.image,
-    required this.title,
-    this.textColor = brown,
-    this.backgroundColor,
-    this.onTap,
-  });
-  final String image, title;
+  // final allcategoriescontroller = Get.put(AllCategoriesController());
+
+  const VerticalImageWithText(
+      {super.key,
+      required this.image,
+      // required this.title,
+      this.textColor = brown,
+      this.backgroundColor,
+      this.onTap,
+      required this.categories});
+  final AllCategories categories;
+  final String image;
+  // , title;
   final Color textColor;
   final Color? backgroundColor;
   final void Function()? onTap;
@@ -55,7 +62,7 @@ class VerticalImageWithText extends StatelessWidget {
             SizedBox(
               // width: 55,
               child: Text(
-                title,
+                "${categories.genre}",
                 style: Theme.of(context)
                     .textTheme
                     .labelMedium!
